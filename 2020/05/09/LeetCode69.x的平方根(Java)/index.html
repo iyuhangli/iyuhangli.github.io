@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>字符串中的第一个唯一字符 (Java) - 做了一些微小的工作</title>
+  <title>LeetCode 69. x的平方根 (Java) - 做了一些微小的工作</title>
   
-    <meta name="keywords" content="LeetCode,Java">
+    <meta name="keywords" content="LeetCode,Java,二分法">
   
 
   
@@ -395,7 +395,7 @@
     
     
       <h1 class="title">
-        字符串中的第一个唯一字符 (Java)
+        LeetCode 69. x的平方根 (Java)
       </h1>
       <div class='new-meta-box'>
         
@@ -426,7 +426,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年12月22日</p>
+    <p>发布于：2020年5月9日</p>
   </a>
 </div>
 
@@ -437,7 +437,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="字符串中的第一个唯一字符 (Java)" data-path="/2020/12/22/LeetCode%20387.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%20(Java)/">
+      <div id="lc-pv" data-title="LeetCode 69. x的平方根 (Java)" data-path="/2020/05/09/LeetCode69.x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9(Java)/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -454,20 +454,18 @@
 
 
   
-  <h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/first-unique-character-in-a-string/">https://leetcode-cn.com/problems/first-unique-character-in-a-string/</a></p>
-<h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。</p>
+  <h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sqrtx">https://leetcode-cn.com/problems/sqrtx</a></p>
+<h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h3><p>实现 int sqrt(int x) 函数。<br>计算并返回 x 的平方根，其中 x 是非负整数。<br>由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。</p>
 <p><strong>示例 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; &quot;leetcode&quot;</span><br><span class="line">返回 0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
 <p><strong>示例 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; &quot;loveleetcode&quot;</span><br><span class="line">返回 2</span><br></pre></td></tr></table></figure>
-<p><strong>提示：</strong></p>
-<ul>
-<li>你可以假定该字符串只包含小写字母。<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1>indexOf和lastIndexOf的使用，判断字母第一次出现的位置和最后一次出现的位置是否相同。</li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: 8</span><br><span class="line">输出: 2</span><br><span class="line">说明: 8 的平方根是 2.82842..., </span><br><span class="line">     由于返回类型是整数，小数部分将被舍去。</span><br></pre></td></tr></table></figure>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>第一眼肯定是<code>return Math.sqrt(x)</code>哈哈哈哈。。。。<br>言归正传，需要用到二分法。<br>结果范围肯定在0到x之间，所以使用<strong>二分法</strong>。</p>
 <h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1><ul>
-<li>Todo：使用Hash的方法。<h1 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstUniqChar</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> first = s.indexOf(s.charAt(i));</span><br><span class="line">            <span class="keyword">int</span> last = s.lastIndexOf(s.charAt(i));</span><br><span class="line">            <span class="keyword">if</span>(first ==  last)&#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>去除特殊值1。</li>
+<li>不能使用<code>mid * mid &gt; x</code>，只能使用<code>x / mid &lt; mid</code>，为了防止int数太大溢出。<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1></li>
 </ul>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> min = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max = x;</span><br><span class="line">        <span class="keyword">while</span>(min&lt;max-<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (max+min)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(x/mid&lt;mid)&#123;</span><br><span class="line">                max=mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                min=mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
   
     
@@ -497,10 +495,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-22T20:11:03+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T22:25:28+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年12月22日</p>
+    <p>更新于：2020年12月19日</p>
   </a>
 </div>
 
@@ -509,7 +507,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分法</p></a></div>
 
 
         
@@ -522,7 +520,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/12/22/LeetCode%20387.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%20(Java)/&title=字符串中的第一个唯一字符 (Java) - 做了一些微小的工作&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/09/LeetCode69.x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9(Java)/&title=LeetCode 69. x的平方根 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -534,7 +532,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/12/22/LeetCode%20387.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%20(Java)/&title=字符串中的第一个唯一字符 (Java) - 做了一些微小的工作&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/09/LeetCode69.x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9(Java)/&title=LeetCode 69. x的平方根 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -546,7 +544,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/12/22/LeetCode%20387.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%20(Java)/&title=字符串中的第一个唯一字符 (Java) - 做了一些微小的工作&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/09/LeetCode69.x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9(Java)/&title=LeetCode 69. x的平方根 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -576,17 +574,17 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/29/%E5%85%B3%E4%BA%8EWindows%E8%BF%90%E8%A1%8CYOLO%E5%92%8CSSD%E7%9A%84python%E4%BB%A3%E7%A0%81%E6%8F%90%E7%A4%BANo%20module%20named%20%E2%80%98cv2%E5%92%8COn%20entry%20to%20DGEBAL%20parameter%20number%E7%9A%84%E9%97%AE%E9%A2%98/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>关于Windows运行YOLO和SSD的python代码提示No module named cv2和On entry to DGEBAL parameter number的问题</p>
-          <p class='content'>Python运行YOLO和SSD相关文件时报错提示ModuleNotFoundError: No module named &#39;cv2&#39;解决方法：安装opencv-python。
-...</p>
+        <a class='prev' href='/2020/05/09/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F2%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80-ConstraintLayout/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout</p>
+          <p class='content'>本项目使用约束布局和自定义视图相结合的方法绘制界面。这篇文章主要介绍了约束布局，即ConstraintLayout。
+新建布局资源文件在res-&gt;layout文件夹中击右键，创建一个Roo...</p>
         </a>
       
       
-        <a class='next' href='/2020/05/26/LeetCode%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0%20(Java)%EF%BC%88%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%89/'>
-          <p class='title'>LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/find-the-duplicate-number/
-题目要求给定一个包含 n + 1 个整数的数组 nums，其数字都...</p>
+        <a class='next' href='/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/'>
+          <p class='title'>安卓数独游戏-1-隐藏AndroidActionBar<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>在开发Android应用时，默认会有如图所示的一栏大大的ActionBar：
+如果想要去除ActionBar，只需要在页面中的onCreate函数中加入getSupportActionBar()...</p>
         </a>
       
     </div>
@@ -627,7 +625,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82"><span class="toc-text">题目要求</span></a></li></ol>
     </div>
   </section>
 
@@ -647,7 +645,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="字符串中的第一个唯一字符 (Java)";
+  pdata.postTitle="LeetCode 69. x的平方根 (Java)";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

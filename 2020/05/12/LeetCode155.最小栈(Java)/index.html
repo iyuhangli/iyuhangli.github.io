@@ -19,9 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法） - 做了一些微小的工作</title>
+  <title>LeetCode 155. 最小栈 (Java) - 做了一些微小的工作</title>
   
-    <meta name="keywords" content="LeetCode,Java,二分法,链表">
+    <meta name="keywords" content="LeetCode,Java,数据结构,栈">
   
 
   
@@ -395,7 +395,7 @@
     
     
       <h1 class="title">
-        LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法）
+        LeetCode 155. 最小栈 (Java)
       </h1>
       <div class='new-meta-box'>
         
@@ -426,7 +426,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月26日</p>
+    <p>发布于：2020年5月12日</p>
   </a>
 </div>
 
@@ -437,7 +437,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法）" data-path="/2020/05/26/LeetCode%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0%20(Java)%EF%BC%88%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%89/">
+      <div id="lc-pv" data-title="LeetCode 155. 最小栈 (Java)" data-path="/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -454,31 +454,22 @@
 
 
   
-  <h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-duplicate-number/">https://leetcode-cn.com/problems/find-the-duplicate-number/</a></p>
-<h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。<br><strong>示例 1:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,4,2,2]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [3,1,3,4,2]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
-<p><strong>说明：</strong></p>
+  <h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/min-stack/">https://leetcode-cn.com/problems/min-stack/</a></p>
+<h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>设计一个支持<code>push</code>，<code>pop</code>，<code>top</code>操作，并能在常数时间内检索到最小元素的栈。</p>
 <ul>
-<li>不能更改原数组（假设数组是只读的）。</li>
-<li>只能使用额外的 O(1) 的空间。</li>
-<li>时间复杂度小于 O(n2) 。</li>
-<li>数组中只有一个重复的数字，但它可能不止重复出现一次。<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1>因为数组中只有一个数字有重复项，可以把数组当成一个有环的链表，然后找到环的起点，这就和<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">LeetCode 142. 环形链表 II</a>一样了。使用<strong>快慢指针法</strong>。</li>
+<li><code>push(x)</code> —— 将元素 x 推入栈中。</li>
+<li><code>pop()</code> —— 删除栈顶的元素。</li>
+<li><code>top()</code> —— 获取栈顶元素。</li>
+<li><code>getMin()</code> —— 检索栈中的最小元素。</li>
+<li>*示例 1:**<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">[&quot;MinStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;getMin&quot;,&quot;pop&quot;,&quot;top&quot;,&quot;getMin&quot;]</span><br><span class="line">[[],[-2],[0],[-3],[],[],[],[]]</span><br><span class="line">输出：</span><br><span class="line">[null,null,null,null,-3,null,0,-2]</span><br><span class="line">解释：</span><br><span class="line">MinStack minStack &#x3D; new MinStack();</span><br><span class="line">minStack.push(-2);</span><br><span class="line">minStack.push(0);</span><br><span class="line">minStack.push(-3);</span><br><span class="line">minStack.getMin();   --&gt; 返回 -3.</span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; 返回 0.</span><br><span class="line">minStack.getMin();   --&gt; 返回 -2.</span><br></pre></td></tr></table></figure></li>
+<li>*提示**</li>
+<li><code>pop</code>、<code>top</code> 和 <code>getMin</code>操作总是在<strong>非空栈</strong>上调用。<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1>数组是有序的，使用<strong>双指针法</strong>。<h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1></li>
+<li>常数时间。</li>
+<li>注意空栈的情况<h1 id="解法一：两个栈"><a href="#解法一：两个栈" class="headerlink" title="解法一：两个栈"></a>解法一：两个栈</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y=<span class="number">0</span>;</span><br><span class="line">    Stack&lt;Integer&gt;  stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    Stack&lt;Integer&gt;  stackm = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        stack.push(x); </span><br><span class="line">        <span class="keyword">if</span>(stackm.size()!=<span class="number">0</span>)&#123;</span><br><span class="line">            y=stackm.peek();</span><br><span class="line">            <span class="keyword">if</span>(y&gt;x)&#123;</span><br><span class="line">                stackm.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                stackm.push(y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            stackm.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">        stackm.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stackm.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="两个栈思路"><a href="#两个栈思路" class="headerlink" title="两个栈思路"></a>两个栈思路</h2>创建两个栈<code>stack</code>和<code>stackm</code>，当有新元素入栈时，直接进入<code>stack</code>，然后比较新元素与<code>stackm</code>栈顶元素的大小，判断进入<code>stackm</code>的元素的值；当有元素出栈时，<code>stack</code>和<code>stackm</code>中栈顶元素直接出栈。<br>无论何时，<code>stackm</code>的栈顶元素值为<code>stack</code>中元素的最小值。</li>
 </ul>
-<p>当然也可以使用<strong>二分法</strong>。</p>
-<h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1><ul>
-<li>常数空间</li>
-<li>平方的复杂度<h1 id="解法一：快慢指针法"><a href="#解法一：快慢指针法" class="headerlink" title="解法一：快慢指针法"></a>解法一：快慢指针法</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> fast = <span class="number">0</span>, slow = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            fast = nums[nums[fast]];</span><br><span class="line">            slow = nums[slow];</span><br><span class="line">            <span class="keyword">if</span>(slow == fast) &#123;</span><br><span class="line">                fast = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(nums[slow] != nums[fast]) &#123;</span><br><span class="line">                    fast = nums[fast];</span><br><span class="line">                    slow = nums[slow];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> nums[slow];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="快慢指针法思路"><a href="#快慢指针法思路" class="headerlink" title="快慢指针法思路"></a>快慢指针法思路</h2>假如有一个数组<code>[1,2,4,2]</code>，这时候就可以如果按照顺序遍历，就是<code>1242 42  42······</code>。<br>我们设置两个一快(fast)一慢(slow)两个指针，一个每次走两步，一个每次走一步，直到它们相遇。<br>此时再将 slow 放置到起点，两个指针每次同时移动一步，相遇的点就是答案。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-636fcb670e50a0cb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-636fcb670e50a0cb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="示意图"></li>
-</ul>
-<h1 id="解法二：二分法"><a href="#解法二：二分法" class="headerlink" title="解法二：二分法"></a>解法二：二分法</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num &lt;= mid) &#123;</span><br><span class="line">                    cnt += <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt &gt; mid) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二分法思路"><a href="#二分法思路" class="headerlink" title="二分法思路"></a>二分法思路</h2><p>拿示例一举个例子：</p>
-<p>[1,3,4,2,2]<br>此时数字在 1 到5 之间。</p>
-<p>mid = (1 + 5) / 2 = 3<br>小于等于的3有4个，即(1,2,2,3)，1到3中肯定有重复的值。</p>
-<p>mid = (1 + 3) / 2 = 2<br>小于等于的2有3个(1,2,2)，1到2中肯定有重复的值。</p>
-<p>mid = (1 + 2) / 2 = 1<br>小于等于的1有1个(1)，2到2中肯定有重复的值<br>所以重复的数是 2。</p>
-<p>另外这是一个反常规操作，用<code>时间换空间</code>，因为i我们一般都是用<code>空间换时间</code>。</p>
+<h1 id="解法二：一个栈"><a href="#解法二：一个栈" class="headerlink" title="解法二：一个栈"></a>解法二：一个栈</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> y=<span class="number">0</span>;</span><br><span class="line">    Stack&lt;Integer&gt;  stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!stack.isEmpty())&#123;</span><br><span class="line">            y=stack.get(stack.size()-<span class="number">2</span>);</span><br><span class="line">            <span class="keyword">if</span>(y&gt;x)&#123;</span><br><span class="line">                stack.push(x);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                stack.push(y);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            stack.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(x); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        stack.pop();</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peek();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.get(stack.size()-<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj.getMin();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="一个栈思路"><a href="#一个栈思路" class="headerlink" title="一个栈思路"></a>一个栈思路</h2><p>创建栈<code>stack</code>，当有新元素入栈时，先判断新元素与栈顶元素的大小，将小的值入栈，之后新元素入栈，这样栈中数字两两成对。出栈时，两两出栈。<br>无论何时，<code>stackm</code>的第一层元素值为栈顶值<code>top</code>，第二层元素值为<code>stack</code>中元素的最小值。</p>
 
   
   
@@ -509,7 +500,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T22:25:44+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-19T22:25:37+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月19日</p>
@@ -521,7 +512,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分法</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%93%BE%E8%A1%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>链表</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/LeetCode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>LeetCode</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%A0%88/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>栈</p></a></div>
 
 
         
@@ -534,7 +525,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/26/LeetCode%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0%20(Java)%EF%BC%88%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%89/&title=LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法） - 做了一些微小的工作&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/&title=LeetCode 155. 最小栈 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -546,7 +537,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/26/LeetCode%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0%20(Java)%EF%BC%88%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%89/&title=LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法） - 做了一些微小的工作&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/&title=LeetCode 155. 最小栈 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -558,7 +549,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/26/LeetCode%20287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0%20(Java)%EF%BC%88%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95%EF%BC%89/&title=LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法） - 做了一些微小的工作&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/&title=LeetCode 155. 最小栈 (Java) - 做了一些微小的工作&summary="
           
           >
           
@@ -588,17 +579,17 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/12/22/LeetCode%20387.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6%20(Java)/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>字符串中的第一个唯一字符 (Java)</p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/first-unique-character-in-a-string/
-题目要求给定一个字符串，找到它的第一个不重复的字...</p>
+        <a class='prev' href='/2020/05/13/LeetCode102.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86(Java)/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LeetCode 102. 二叉树的层序遍历 (Java)</p>
+          <p class='content'>题目地址https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+题目要求给你一个二叉树，请你返回其按 层序遍历 得...</p>
         </a>
       
       
-        <a class='next' href='/2020/05/13/LeetCode%20102.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%20(Java)/'>
-          <p class='title'>LeetCode 102. 二叉树的层序遍历 (Java)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
-题目要求给你一个二叉树，请你返回其按 层序遍历 得...</p>
+        <a class='next' href='/2020/05/10/LeetCode26.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9(Java)/'>
+          <p class='title'>LeetCode 26. 删除排序数组中的重复项 (Java)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目地址https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
+题目要求给定一个排序数组，你需要在 原地 删除...</p>
         </a>
       
     </div>
@@ -639,7 +630,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="toc-text">快慢指针法思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%B3%95%E6%80%9D%E8%B7%AF"><span class="toc-text">二分法思路</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E6%A0%88%E6%80%9D%E8%B7%AF"><span class="toc-text">两个栈思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%A0%88%E6%80%9D%E8%B7%AF"><span class="toc-text">一个栈思路</span></a></li></ol>
     </div>
   </section>
 
@@ -659,7 +650,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法）";
+  pdata.postTitle="LeetCode 155. 最小栈 (Java)";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
