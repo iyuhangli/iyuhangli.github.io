@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>安卓数独游戏-3-界面绘制之自定义视图 - 做了一些微小的工作</title>
+  <title>安卓数独游戏-0- - 做了一些微小的工作</title>
   
     <meta name="keywords" content="Android,Sudoku">
   
@@ -395,7 +395,7 @@
     
     
       <h1 class="title">
-        安卓数独游戏-3-界面绘制之自定义视图
+        安卓数独游戏-0-
       </h1>
       <div class='new-meta-box'>
         
@@ -426,7 +426,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月10日</p>
+    <p>发布于：2020年5月8日</p>
   </a>
 </div>
 
@@ -437,7 +437,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="安卓数独游戏-3-界面绘制之自定义视图" data-path="/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%B8%89%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/">
+      <div id="lc-pv" data-title="安卓数独游戏-0-" data-path="/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F0/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -454,17 +454,24 @@
 
 
   
-  <h1 id="创建自定义视图类"><a href="#创建自定义视图类" class="headerlink" title="创建自定义视图类"></a>创建自定义视图类</h1><p>创建自定义视图之前，需要创建自定义视图类，之后在资源文件<code>.xml</code>中作为一个元素插入。<br>创建自定义视图类时，需要继承<code>View</code>类，并重写类的构造函数。自定义视图类的基本结构如下所示：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">draw_sudoku_grid_easy</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(sudoku_play_easy sudoku_play_easy)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(sudoku_play_easy);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context, AttributeSet attributeSet)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context,attributeSet);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context,attrs,defStyleAttr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="自定义视图类中重要函数"><a href="#自定义视图类中重要函数" class="headerlink" title="自定义视图类中重要函数"></a>自定义视图类中重要函数</h1><p>在数独游戏项目的自定义视图中，重写了View类的onDraw和onTouchEvent函数。</p>
-<h2 id="onDraw函数"><a href="#onDraw函数" class="headerlink" title="onDraw函数"></a>onDraw函数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span></span>&#123;</span><br><span class="line"><span class="comment">//Your code</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>每次函数重新绘制的时候，都会运行该函数。</p>
-<h3 id="如何刷新自定义视图界面"><a href="#如何刷新自定义视图界面" class="headerlink" title="如何刷新自定义视图界面"></a>如何刷新自定义视图界面</h3><p>可以在自定义视图类中使用<code>invalidate</code>函数来重新调用<code>onDraw</code>函数，达到刷新界面的效果。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invalidate();</span><br></pre></td></tr></table></figure>
-<h2 id="onTouchEvent函数"><a href="#onTouchEvent函数" class="headerlink" title="onTouchEvent函数"></a>onTouchEvent函数</h2><p>项目中使用<code>onTouchEvent</code>函数对触摸事件进行处理。<br>使用<code>MotionEvent.ACTION_DOWN</code>和<code>MotionEvent.ACTION_UP</code>判断触摸事件类型，使用<code>event.getX()</code>和<code>event.getY()</code>得到触摸位置。</p>
-<h1 id="自定义视图中的Toast消息框"><a href="#自定义视图中的Toast消息框" class="headerlink" title="自定义视图中的Toast消息框"></a>自定义视图中的Toast消息框</h1><p>安卓数独游戏中，需要在适当的时机给出用户提示，本项目使用了<code>Toast</code>的提示方式。<br>代码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Toast toast=Toast.makeText(getContext(), <span class="string">&quot;&quot;</span>, <span class="number">800</span>);</span><br><span class="line">LinearLayout layout = (LinearLayout) toast.getView();</span><br><span class="line">TextView str = (TextView) layout.getChildAt(<span class="number">0</span>);</span><br><span class="line">str.setTextSize(<span class="number">30</span>);<span class="comment">//字体大小</span></span><br><span class="line">str.setTextColor(R.color.white);<span class="comment">//字体颜色</span></span><br><span class="line">toast.setText(<span class="string">&quot;Hint added!&quot;</span>);<span class="comment">//文本内容</span></span><br><span class="line">toast.setGravity(Gravity.CENTER, <span class="number">0</span>, <span class="number">0</span>);<span class="comment">//设置居中显示</span></span><br><span class="line">ImageView imageView= <span class="keyword">new</span> ImageView(getContext());</span><br><span class="line">imageView.setImageResource(R.drawable.about_icon);<span class="comment">//要显示的图标</span></span><br><span class="line">LinearLayout toastView = (LinearLayout) toast.getView();</span><br><span class="line">toastView.setOrientation(LinearLayout.VERTICAL);</span><br><span class="line">toastView.addView(imageView, <span class="number">0</span>);</span><br><span class="line">toast.show();</span><br></pre></td></tr></table></figure>
-<p>效果如下图：<br><img src="https://upload-images.jianshu.io/upload_images/23211257-676c0b7953421b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-676c0b7953421b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="Toast.png"></p>
+  <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>历时半年，终于项目–安卓数独游戏（Android Sudoku Game)。 在材料提交后，准备再次从头复习一遍软件开发的过程，同时对项目中遇到的问题和用到的方法做一个记录。</p>
+<hr>
+<h1 id="游戏简介"><a href="#游戏简介" class="headerlink" title="游戏简介"></a>游戏简介</h1><p>数独是一个数学逻辑游戏，它包括9x9个格子，玩家需要通过已知数字推断出剩余数字，来保证行、列和九宫格包括不重复的数字1-9。<br>除数独游戏的基础游戏功能外，本项目还实现了分享，保存，标记，提示，昼夜模式切换和点击音效设置等功能。</p>
+<hr>
+<h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><ul>
+<li>集成开发工具：Android Studio 3.6.2</li>
+<li>辅助开发工具：Gradle 5.6.4, Android Virtual Device</li>
+<li>开发语言：Java 13.0.1, XML</li>
+<li>测试环境：Android 4.0.3 +</li>
+</ul>
+<hr>
+<h1 id="关于游戏"><a href="#关于游戏" class="headerlink" title="关于游戏"></a>关于游戏</h1><p>当前安卓数独游戏已经发布到Google Play Store，更多详情如下：</p>
+<ul>
+<li>谷歌商店：<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=sudokugame.example.sudoku">数独游戏</a></li>
+<li>游戏更新记录：<a target="_blank" rel="noopener" href="https://sites.google.com/view/sudoku-game-version-history">Sudoku version history</a></li>
+<li>Email：<a href="iyuhangli@outlook.com">iyuhangli@outlook.com</a></li>
+<li>Github：<a href="#">等待上传中</a></li>
+</ul>
 
   
   
@@ -495,7 +502,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T15:27:45+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T15:27:40+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月31日</p>
@@ -520,7 +527,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%B8%89%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/&title=安卓数独游戏-3-界面绘制之自定义视图 - 做了一些微小的工作&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F0/&title=安卓数独游戏-0- - 做了一些微小的工作&summary="
           
           >
           
@@ -532,7 +539,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%B8%89%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/&title=安卓数独游戏-3-界面绘制之自定义视图 - 做了一些微小的工作&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F0/&title=安卓数独游戏-0- - 做了一些微小的工作&summary="
           
           >
           
@@ -544,7 +551,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%B8%89%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/&title=安卓数独游戏-3-界面绘制之自定义视图 - 做了一些微小的工作&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F0/&title=安卓数独游戏-0- - 做了一些微小的工作&summary="
           
           >
           
@@ -574,19 +581,12 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/05/10/LeetCode%2026.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9%20(Java)/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LeetCode 26. 删除排序数组中的重复项 (Java)</p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/
-题目要求给定一个排序数组，你需要在 原地 删除...</p>
+        <a class='prev' href='/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>安卓数独游戏-1-隐藏AndroidActionBar</p>
+          <p class='content'>在开发Android应用时，默认会有如图所示的一栏大大的ActionBar：
+如果想要去除ActionBar，只需要在页面中的onCreate函数中加入getSupportActionBar()...</p>
         </a>
       
-      
-        <a class='next' href='/2020/05/10/LeetCode%20236.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%20(Java)/'>
-          <p class='title'>LeetCode 236. 二叉树的最近公共祖先 (Java)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
-
-题目要求给定一个二叉树, 找到该树中...</p>
-        </a>
       
     </div>
   
@@ -626,7 +626,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#onDraw%E5%87%BD%E6%95%B0"><span class="toc-text">onDraw函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%B7%E6%96%B0%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE%E7%95%8C%E9%9D%A2"><span class="toc-text">如何刷新自定义视图界面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#onTouchEvent%E5%87%BD%E6%95%B0"><span class="toc-text">onTouchEvent函数</span></a></li></ol>
+        
     </div>
   </section>
 
@@ -646,7 +646,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="安卓数独游戏-3-界面绘制之自定义视图";
+  pdata.postTitle="安卓数独游戏-0-";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 

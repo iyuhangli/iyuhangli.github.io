@@ -19,7 +19,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout - 做了一些微小的工作</title>
+  <title>安卓数独游戏-1-隐藏AndroidActionBar - 做了一些微小的工作</title>
   
     <meta name="keywords" content="Android,Sudoku">
   
@@ -395,7 +395,7 @@
     
     
       <h1 class="title">
-        安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout
+        安卓数独游戏-1-隐藏AndroidActionBar
       </h1>
       <div class='new-meta-box'>
         
@@ -426,7 +426,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年5月9日</p>
+    <p>发布于：2020年5月8日</p>
   </a>
 </div>
 
@@ -437,7 +437,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout" data-path="/2020/05/09/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80-ConstraintLayout/">
+      <div id="lc-pv" data-title="安卓数独游戏-1-隐藏AndroidActionBar" data-path="/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -454,25 +454,10 @@
 
 
   
-  <p>本项目使用<strong>约束布局</strong>和<strong>自定义视图</strong>相结合的方法绘制界面。<br>这篇文章主要介绍了<code>约束布局</code>，即<code>ConstraintLayout</code>。</p>
-<h1 id="新建布局资源文件"><a href="#新建布局资源文件" class="headerlink" title="新建布局资源文件"></a>新建布局资源文件</h1><p>在<code>res-&gt;layout</code>文件夹中击右键，创建一个<code>Root element</code>为<code>androidx.constraintlayout.widget.ConstraintLayout</code>的<code>Drawable Resource File</code>，点击确定，会发现<code>src</code>目录多了<code>.java</code>文件和<code>.xml</code>文件。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-e781795430325d38.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-e781795430325d38.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="Create xml.PNG"></p>
-<h1 id="配置布局中元素"><a href="#配置布局中元素" class="headerlink" title="配置布局中元素"></a>配置布局中元素</h1><p>Android Studio为开发者提供了三种开发模式：</p>
-<ul>
-<li><p>纯代码</p>
-</li>
-<li><p>代码与预览混合</p>
-</li>
-<li><p>图形用户界面</p>
-</li>
-</ul>
-<p>开发者可以通过点击右上角的三个图标自由切换，选择适合自己的模式。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-d6ab63387db7038a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-d6ab63387db7038a.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="三种开发模式.PNG"></p>
-<h2 id="纯代码模式"><a href="#纯代码模式" class="headerlink" title="纯代码模式"></a>纯代码模式</h2><p>只有代码，不能实时预览，除非编译屏幕很小，否则不建议使用这个模式。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-8d89ec7ed313ae83?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-8d89ec7ed313ae83?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="纯代码模式.PNG"></p>
-<h2 id="代码与预览混合模式"><a href="#代码与预览混合模式" class="headerlink" title="代码与预览混合模式"></a>代码与预览混合模式</h2><p>左边修改代码，右边实时预览界面，是开发本项目中最常使用的模式。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-5811d450dbb528bd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-5811d450dbb528bd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="代码与预览混合模式.png"></p>
-<h2 id="图形用户界面模式"><a href="#图形用户界面模式" class="headerlink" title="图形用户界面模式"></a>图形用户界面模式</h2><p>通过对元素进行拖拽和直接对元素进行配置等方法进行布局设置，最简单的一种模式，但是博主认为如果熟悉代码功能之后，直接修改代码更加方便。<br>如图所示，左侧为可以添加的元素，可以通过拖拽方式添加；中间为当前界面的预览；右侧可以修改约束项。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-dd7e535af5916abc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-dd7e535af5916abc?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="图形用户界面模式.png"></p>
-<h1 id="约束布局的关键代码"><a href="#约束布局的关键代码" class="headerlink" title="约束布局的关键代码"></a>约束布局的关键代码</h1><p>下面以对按钮的设置为例子，对约束布局的关键代码做出解释。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">  android:id&#x3D;&quot;@+id&#x2F;new_game_button&quot;&#x2F;&#x2F;该元素的id</span><br><span class="line">  android:layout_width&#x3D;&quot;240dp&quot;&#x2F;&#x2F;元素的宽</span><br><span class="line">  android:layout_height&#x3D;&quot;50dp&quot;&#x2F;&#x2F;元素的高</span><br><span class="line">  android:text&#x3D;&quot;@string&#x2F;new_game&quot;&#x2F;&#x2F;按钮内内容，可以直接输入String，也可以使用String变量</span><br><span class="line">  style&#x3D;&quot;?android:attr&#x2F;borderlessButtonStyle&quot;&#x2F;&#x2F;无边框按钮风格</span><br><span class="line">  app:layout_constraintBottom_toBottomOf&#x3D;&quot;parent&quot;&#x2F;&#x2F;该元素的底部是“parent”的底部</span><br><span class="line">  app:layout_constraintEnd_toEndOf&#x3D;&quot;parent&quot;&#x2F;&#x2F;同理</span><br><span class="line">  app:layout_constraintStart_toStartOf&#x3D;&quot;parent&quot;&#x2F;&#x2F;同理</span><br><span class="line">  app:layout_constraintTop_toBottomOf&#x3D;&quot;@id&#x2F;sudoku_logo&quot;&#x2F;&#x2F;同理</span><br><span class="line">  android:textAllCaps&#x3D;&quot;false&quot;&#x2F;&#x2F;如果没有这句话按钮上的字母会全部大写</span><br><span class="line">  android:background&#x3D;&quot;@drawable&#x2F;button_background_control&quot;&#x2F;&#x2F;按钮背景设置</span><br><span class="line">  app:layout_constraintHorizontal_bias&#x3D;&quot;0.5&quot;&#x2F;&#x2F;按钮在水平方向，左右两侧空白比例</span><br><span class="line">  app:layout_constraintVertical_bias&#x3D;&quot;0.3&quot;&#x2F;&#x2F;按钮在垂直方向，左右两侧空白比例</span><br><span class="line">&#x2F;&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="按钮上字母全部大写问题"><a href="#按钮上字母全部大写问题" class="headerlink" title="按钮上字母全部大写问题"></a>按钮上字母全部大写问题</h2><p>如果采用默认设置，使用<code> android:text=&quot;String&quot;</code>后，按钮上字母将会全部大写。可以在xml文件中按钮元素的设置部分，添加<code>android:textAllCaps=&quot;false&quot;</code>,这样按钮上的字母的大小写将会和<code>String</code>中的字母大小写一致。</p>
-<h2 id="元素位置设置"><a href="#元素位置设置" class="headerlink" title="元素位置设置"></a>元素位置设置</h2><p>使用<code>app:layout_constraintA_toBOf=&quot;C&quot;</code>设置元素的位置，其中<code>A</code>和<code>B</code>可以为<code>Start</code>，<code>End</code>，<code>Top</code>，<code>Bottom</code>，<code>C</code>为需要作为参考的元素，可以为<code>parent</code>或其他元素的<code>id</code>。例如<code>app:layout_constraintTop_toBottomOf=&quot;@id/sudoku_logo&quot;</code>代表该元素的顶部是<code>sudoku_logo</code>的底部。<br>最后通过<code>app:layout_constraintHorizontal_bias=&quot;n&quot;</code>和<code>app:layout_constraintVertical_bias=&quot;n&quot;</code>来设置元素水平方向或垂直方向两侧的空白比例。</p>
+  <p>在开发Android应用时，默认会有如图所示的一栏大大的ActionBar：<br><img src="https://upload-images.jianshu.io/upload_images/23211257-8d50ed4e0d24cff2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-8d50ed4e0d24cff2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="有Actionbar.png"></p>
+<p>如果想要去除ActionBar，只需要在页面中的<code>onCreate</code>函数中加入<code>getSupportActionBar().hide();</code>即可，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">  super.onCreate(savedInstanceState);</span><br><span class="line">  getSupportActionBar().hide(); &#x2F;&#x2F;隐藏ActionBar</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果如下图：<br><img src="https://upload-images.jianshu.io/upload_images/23211257-0a87d20bf04afa47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-0a87d20bf04afa47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="无ActionBar.png"></p>
 
   
   
@@ -503,7 +488,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T15:27:34+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T15:27:50+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2020年12月31日</p>
@@ -528,7 +513,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/09/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80-ConstraintLayout/&title=安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout - 做了一些微小的工作&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/&title=安卓数独游戏-1-隐藏AndroidActionBar - 做了一些微小的工作&summary="
           
           >
           
@@ -540,7 +525,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/09/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80-ConstraintLayout/&title=安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout - 做了一些微小的工作&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/&title=安卓数独游戏-1-隐藏AndroidActionBar - 做了一些微小的工作&summary="
           
           >
           
@@ -552,7 +537,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/09/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F%EF%BC%88%E4%BA%8C%EF%BC%89%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E7%BA%A6%E6%9D%9F%E5%B8%83%E5%B1%80-ConstraintLayout/&title=安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout - 做了一些微小的工作&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F1%E9%9A%90%E8%97%8FAndroidActionBar/&title=安卓数独游戏-1-隐藏AndroidActionBar - 做了一些微小的工作&summary="
           
           >
           
@@ -582,18 +567,18 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/05/10/LeetCode%20236.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%20(Java)/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LeetCode 236. 二叉树的最近公共祖先 (Java)</p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/
-
-题目要求给定一个二叉树, 找到该树中...</p>
+        <a class='prev' href='/2020/05/09/LeetCode%2069.%20x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9%20(Java)/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LeetCode 69. x的平方根 (Java)</p>
+          <p class='content'>题目地址https://leetcode-cn.com/problems/sqrtx
+题目要求实现 int sqrt(int x) 函数。计算并返回 x 的平方根，其中 x 是非负整数。由于返回...</p>
         </a>
       
       
-        <a class='next' href='/2020/05/09/LeetCode%2069.%20x%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9%20(Java)/'>
-          <p class='title'>LeetCode 69. x的平方根 (Java)<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>题目地址https://leetcode-cn.com/problems/sqrtx
-题目要求实现 int sqrt(int x) 函数。计算并返回 x 的平方根，其中 x 是非负整数。由于返回...</p>
+        <a class='next' href='/2020/05/08/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F0/'>
+          <p class='title'>安卓数独游戏-0-<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>前言历时半年，终于项目–安卓数独游戏（Android Sudoku Game)。 在材料提交后，准备再次从头复习一遍软件开发的过程，同时对项目中遇到的问题和用到的方法做一个记录。
+
+游戏简介数独...</p>
         </a>
       
     </div>
@@ -624,20 +609,6 @@
 
 
 
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%AF%E4%BB%A3%E7%A0%81%E6%A8%A1%E5%BC%8F"><span class="toc-text">纯代码模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E4%B8%8E%E9%A2%84%E8%A7%88%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F"><span class="toc-text">代码与预览混合模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E6%A8%A1%E5%BC%8F"><span class="toc-text">图形用户界面模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E4%B8%8A%E5%AD%97%E6%AF%8D%E5%85%A8%E9%83%A8%E5%A4%A7%E5%86%99%E9%97%AE%E9%A2%98"><span class="toc-text">按钮上字母全部大写问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E4%BD%8D%E7%BD%AE%E8%AE%BE%E7%BD%AE"><span class="toc-text">元素位置设置</span></a></li></ol>
-    </div>
-  </section>
-
 
   
 
@@ -654,7 +625,7 @@
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="安卓数独游戏-2-界面绘制之约束布局-ConstraintLayout";
+  pdata.postTitle="安卓数独游戏-1-隐藏AndroidActionBar";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
