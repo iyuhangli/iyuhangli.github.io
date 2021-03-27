@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-06T21:39:44.262Z</updated>
+  <updated>2021-03-27T14:57:11.168Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows系统的Anaconda与Tensorflow(tf.contrib不能使用的问题)</title>
+    <link href="http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/"/>
+    <id>http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/</id>
+    <published>2021-03-23T19:22:53.000Z</published>
+    <updated>2021-03-27T14:57:11.168Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的<strong>python环境过高</strong>，（项目需要使用python3.6）便想到了在Anaconda环境下安装Tensorflow。<br>将安装过程中的坑记录在这里。</p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><ul><li><p><input disabled="" type="checkbox"> </p><ol><li>安装Anaconda到Windows系统中，打开<code>Anaconda Prompt</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="2"><li>创建虚拟环境，虚拟机名称<code>nameOfVM</code>，并设置<code>Python版本3.6</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n nameOfVM python&#x3D;3.6</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="3"><li>激活安装的虚拟机。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate nameOfVM</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="4"><li>这时候在命令行最前面会有虚拟机的名字，例如<code>&lt;nameOfVM&gt;</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="5"><li>安装Tensorflow，可以选择指定版本。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow&#x3D;&#x3D;1.13.2</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="6"><li>安装完成后就可以使用<code>import tensorflow as tf</code>了。</li></ol></li></ul><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul><li>Tensorflow 2.0.x版本没有<code>tf.contrib</code>，可以安装<code>1.13.2</code>版本的Tensorflow来使用<code>tf.contrib</code>。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的&lt;strong&gt;python环</summary>
+      
+    
+    
+    
+    <category term="问题记录" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Tensorflow" scheme="http://example.com/tags/Tensorflow/"/>
+    
+    <category term="Contrib" scheme="http://example.com/tags/Contrib/"/>
+    
+  </entry>
   
   <entry>
     <title>National cycling lane 和戴口罩的老太太</title>
@@ -193,6 +219,35 @@
     <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
     
     <category term="Java" scheme="http://example.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>约束满足问题的三个启发式（Constraint Satisfaction Problem）不能转化成另一个集合中的状态</title>
+    <link href="http://example.com/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/"/>
+    <id>http://example.com/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/</id>
+    <published>2020-11-10T14:12:04.000Z</published>
+    <updated>2021-03-27T14:32:56.207Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常见的三个启发式：</p><ol><li>最小剩余值（此变量仍然有多少个有效值）</li><li>度启发式（此变量影响多少其他变量）</li><li>最小约束值（什么值将为其他变量留下最多其他值）</li></ol><h1 id="以澳大利亚地图为例"><a href="#以澳大利亚地图为例" class="headerlink" title="以澳大利亚地图为例"></a>以澳大利亚地图为例</h1><p><img src="https://img-blog.csdnimg.cn/20210327222729947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210327222729947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="CSP"></p><p><strong>题目要求：</strong> 对澳大利亚地图的每个州进行着色，每个区域可以涂上红色、绿色或者蓝色，要求是相邻的区域颜色不能相同。（不需要考虑<code>T</code>，因为<code>T</code>可以涂任意颜色）</p><p><strong>分析：</strong><br>-&gt;根据启发式1，<code>NT</code>和<code>NSW</code>的剩余有效值数量都相同。<br>-&gt;根据启发式2，<code>NSW</code>影响1个变量，但是<code>NT</code>影响0个，所以下一步应该给<code>NSW</code>涂色。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;常见的三个启发式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;最小剩余值（此变量仍然有多少个有效值）&lt;/li&gt;
+&lt;li&gt;度启发式（此变量影响多少其他变量）&lt;</summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="人工智能" scheme="http://example.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    <category term="CSP" scheme="http://example.com/tags/CSP/"/>
     
   </entry>
   

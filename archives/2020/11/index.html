@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：栈 - 做了一些微小的工作</title>
+  <title>归档：2020/11 - 做了一些微小的工作</title>
   
 
   
@@ -58,7 +58,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -309,7 +309,7 @@
     <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="half" class='cover-wrapper  dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -384,11 +384,9 @@
       <div class='body-wrapper' id="pjax-container">
         
 
-
 <div class='l_main'>
-  
-    
-      
+	
+		
   <section class="post-list">
     
       
@@ -408,22 +406,23 @@
   
     
     <h2 class="article-title" >
-      <a href="/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/">
-        LeetCode 155. 最小栈 (Java)
+      <a href="/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/">
+        约束满足问题的三个启发式（Constraint Satisfaction Problem）不能转化成另一个集合中的状态
       </a>
     </h2>
   
   <div class='md'>
     
       
-        题目地址https://leetcode-cn.com/problems/min-stack/
-题目要求设计一个支持push，pop，top操作，并能在常数时间内检索到最小元素的栈。
+        总结常见的三个启发式：
 
-push(x) —— 将元素 x 推入栈中。
-pop() —— 删除栈顶的元素。
-top() —— 获取栈顶元素。
-getMin() —— 检索栈中的最小元素。
-*示例 1:**123456789101112...
+最小剩余值（此变量仍然有多少个有效值）
+度启发式（此变量影响多少其他变量）
+最小约束值（什么值将为其他变量留下最多其他值）
+
+以澳大利亚地图为例
+题目要求： 对澳大利亚地图的每个州进行着色，每个区域可以涂上红色、绿色或者蓝色，要求是相邻的区域颜色不能相同。（不需要考虑T，因为T可以涂任意颜色）
+分析：-&gt;根据启发式1，NT和NSW的剩余有效值数量都相同。-&g...
       
     
   </div>
@@ -431,15 +430,15 @@ getMin() —— 检索栈中的最小元素。
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>2020-05-12</time>
+        <time>2020-11-10</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/LeetCode/">LeetCode</a>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/05/12/LeetCode155.%E6%9C%80%E5%B0%8F%E6%A0%88(Java)/'>
+          <a class='readmore' href='/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/'>
             阅读全文
           </a>
         </div>
@@ -459,8 +458,7 @@ getMin() —— 检索栈中的最小元素。
   
 
 
-    
-  
+	
 </div>
 <aside class='l_side'>
   
@@ -624,7 +622,7 @@ getMin() —— 检索栈中的最小元素。
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.add("show");
+  l_header.classList.remove("show");
   
 </script>
 
