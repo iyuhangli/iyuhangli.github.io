@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-27T14:57:11.168Z</updated>
+  <updated>2021-03-27T23:34:53.292Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,15 +21,12 @@
     <link href="http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/"/>
     <id>http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/</id>
     <published>2021-03-23T19:22:53.000Z</published>
-    <updated>2021-03-27T14:57:11.168Z</updated>
+    <updated>2021-03-27T23:34:53.292Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的<strong>python环境过高</strong>，（项目需要使用python3.6）便想到了在Anaconda环境下安装Tensorflow。<br>将安装过程中的坑记录在这里。</p><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><ul><li><p><input disabled="" type="checkbox"> </p><ol><li>安装Anaconda到Windows系统中，打开<code>Anaconda Prompt</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="2"><li>创建虚拟环境，虚拟机名称<code>nameOfVM</code>，并设置<code>Python版本3.6</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n nameOfVM python&#x3D;3.6</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="3"><li>激活安装的虚拟机。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate nameOfVM</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="4"><li>这时候在命令行最前面会有虚拟机的名字，例如<code>&lt;nameOfVM&gt;</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="5"><li>安装Tensorflow，可以选择指定版本。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow&#x3D;&#x3D;1.13.2</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="6"><li>安装完成后就可以使用<code>import tensorflow as tf</code>了。</li></ol></li></ul><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul><li>Tensorflow 2.0.x版本没有<code>tf.contrib</code>，可以安装<code>1.13.2</code>版本的Tensorflow来使用<code>tf.contrib</code>。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的<strong>python环境过高</strong>，（项目需要使用python3.6）便想到了在Anaconda环境下安装Tensorflow。<br>将安装过程中的坑记录在这里。</p><a id="more"></a><h1 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h1><ul><li><p><input disabled="" type="checkbox"> </p><ol><li>安装Anaconda到Windows系统中，打开<code>Anaconda Prompt</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="2"><li>创建虚拟环境，虚拟机名称<code>nameOfVM</code>，并设置<code>Python版本3.6</code>。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n nameOfVM python&#x3D;3.6</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="3"><li>激活安装的虚拟机。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate nameOfVM</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="4"><li>这时候在命令行最前面会有虚拟机的名字，例如<code>&lt;nameOfVM&gt;</code>。</li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="5"><li>安装Tensorflow，可以选择指定版本。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install tensorflow&#x3D;&#x3D;1.13.2</span><br></pre></td></tr></table></figure></li></ol></li><li><p><input disabled="" type="checkbox"> </p><ol start="6"><li>安装完成后就可以使用<code>import tensorflow as tf</code>了。</li></ol></li></ul><h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><ul><li>Tensorflow 2.0.x版本没有<code>tf.contrib</code>，可以安装<code>1.13.2</code>版本的Tensorflow来使用<code>tf.contrib</code>。</li></ul>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的&lt;strong&gt;python环</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;疫情期间与同学一起学习制作了Covid-2019社交距离检测系统，需要使用到Tensorflow，由于我使用的&lt;strong&gt;python环境过高&lt;/strong&gt;，（项目需要使用python3.6）便想到了在Anaconda环境下安装Tensorflow。&lt;br&gt;将安装过程中的坑记录在这里。&lt;/p&gt;</summary>
     
     
     
@@ -119,16 +116,12 @@
     <link href="http://example.com/2021/02/06/20210206/"/>
     <id>http://example.com/2021/02/06/20210206/</id>
     <published>2021-02-06T21:30:04.000Z</published>
-    <updated>2021-03-27T23:24:54.289Z</updated>
+    <updated>2021-03-27T23:35:31.319Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>今天去伊钦河旁边的National cycling lane散步。<br>在栈道中间迎面走过来一个老太太，问前面是哪里，我说我不知道但是你可以看我的谷歌地图，正当我走近一步（&lt;2m）的时候，老太太说稍等，说她需要带上口罩，因为这可以保护我们，然后我们就保持着社交距离直到她戴好口罩，然后我们就通过地图得到了前面是ST DENYS，左前是PORTSWOOD 的结论。<br>社交距离+戴口罩这个行为太严谨了，不愧是排队观念强的英国人。<br>另外National cycling lane 东边是河西边是铁路还挺好看 :)</p>]]></content>
+    <content type="html"><![CDATA[<p>National cycling lane</p><a id="more"></a><p>今天去伊钦河旁边的National cycling lane散步。<br>在栈道中间迎面走过来一个老太太，问前面是哪里，我说我不知道但是你可以看我的谷歌地图，正当我走近一步（&lt;2m）的时候，老太太说稍等，说她需要带上口罩，因为这可以保护我们，然后我们就保持着社交距离直到她戴好口罩，然后我们就通过地图得到了前面是ST DENYS，左前是PORTSWOOD 的结论。<br>社交距离+戴口罩这个行为太严谨了，不愧是排队观念强的英国人。<br>另外National cycling lane 东边是河西边是铁路还挺好看 :)</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;今天去伊钦河旁边的National cycling lane散步。&lt;br&gt;在栈道中间迎面走过来一个老太太，问前面是哪里，我说我不知道但是你可以看我的谷歌地图，正当我走近一步（&amp;lt;2m）的时候，老太太说稍等，说她需要带上口罩，因为这可以</summary>
-      
+    <summary type="html">&lt;p&gt;National cycling lane&lt;/p&gt;</summary>
     
     
     
@@ -144,15 +137,13 @@
     <link href="http://example.com/2021/01/21/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/"/>
     <id>http://example.com/2021/01/21/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/</id>
     <published>2021-01-21T16:12:04.000Z</published>
-    <updated>2021-01-21T16:12:52.522Z</updated>
+    <updated>2021-03-27T23:35:57.683Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>八数码问题也称为九宫问题。在3×3的棋盘，摆有八个棋子，每个棋子上标有1至8的某一数字，不同棋子上标的数字不相同。棋盘上还有一个空格，与空格相邻的棋子可以移到空格中。</p><h1 id="如何证明八数码问题无解"><a href="#如何证明八数码问题无解" class="headerlink" title="如何证明八数码问题无解"></a>如何证明八数码问题无解</h1><p>用一个一位数组代替二维的3*3棋盘，用0代替空白格，即<br><code>1 2 3 4 5 6 7 8 0</code><br>还可以写成<br><code>2 1 3 4 5 6 7 8 0</code><br>在上面两个例子中，第一个是有解的，第二个无解。</p><p>每个数字前面比它大的数字的个数的和称为这个状态的逆序数。<br>现在来看两个例子中，除去数字<code>0</code>之外的逆序数：<br>在第一个例子<code>1 2 3 4 5 6 7 8 0</code>中，它的逆序数为偶数（0个）；<br>在第二个例子<code>2 1 3 4 5 6 7 8 0</code>中，它的逆序数为奇数（1个）。</p><p>在棋盘中，每个数字只能横着或竖着和空格交换：<br>如果是横着交换，在一维数组中体现为<code>0</code>和数字的交换，逆序数不会产生变化；<br>如果是竖着交换，在一维数组中体现为<code>0</code>和选择的数字相隔<strong>两位</strong>数字的交换，逆序数会加2或减2，但是逆序数的奇偶不变。</p><p>所以不论怎么交换，一维数组中的逆序数的奇偶不变，所以第一个例子的情况不会转化为第二个例子的情况。</p><p>八数码的状态也会因为奇偶分为两部分，一部分有解，一部分无解。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>八数码问题也称为九宫问题。在3×3的棋盘，摆有八个棋子，每个棋子上标有1至8的某一数字，不同棋子上标的数字不相同。棋盘上还有一个空格，与空格相邻的棋子可以移到空格中。</p><h1 id="如何证明八数码问题无解"><a href="#如何证明八数码问题无解" class="headerlink" title="如何证明八数码问题无解"></a>如何证明八数码问题无解</h1><a id="more"></a><p>用一个一位数组代替二维的3*3棋盘，用0代替空白格，即<br><code>1 2 3 4 5 6 7 8 0</code><br>还可以写成<br><code>2 1 3 4 5 6 7 8 0</code><br>在上面两个例子中，第一个是有解的，第二个无解。</p><p>每个数字前面比它大的数字的个数的和称为这个状态的逆序数。<br>现在来看两个例子中，除去数字<code>0</code>之外的逆序数：<br>在第一个例子<code>1 2 3 4 5 6 7 8 0</code>中，它的逆序数为偶数（0个）；<br>在第二个例子<code>2 1 3 4 5 6 7 8 0</code>中，它的逆序数为奇数（1个）。</p><p>在棋盘中，每个数字只能横着或竖着和空格交换：<br>如果是横着交换，在一维数组中体现为<code>0</code>和数字的交换，逆序数不会产生变化；<br>如果是竖着交换，在一维数组中体现为<code>0</code>和选择的数字相隔<strong>两位</strong>数字的交换，逆序数会加2或减2，但是逆序数的奇偶不变。</p><p>所以不论怎么交换，一维数组中的逆序数的奇偶不变，所以第一个例子的情况不会转化为第二个例子的情况。</p><p>八数码的状态也会因为奇偶分为两部分，一部分有解，一部分无解。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;八数码问题也称为九宫问题。在3×3的棋盘，摆有八个棋子，每个棋子上标有1至8的某一数字，不同棋子上标的数字不相同。棋盘上还有一个空格，与空格</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;八数码问题也称为九宫问题。在3×3的棋盘，摆有八个棋子，每个棋子上标有1至8的某一数字，不同棋子上标的数字不相同。棋盘上还有一个空格，与空格相邻的棋子可以移到空格中。&lt;/p&gt;
+&lt;h1 id=&quot;如何证明八数码问题无解&quot;&gt;&lt;a href=&quot;#如何证明八数码问题无解&quot; class=&quot;headerlink&quot; title=&quot;如何证明八数码问题无解&quot;&gt;&lt;/a&gt;如何证明八数码问题无解&lt;/h1&gt;</summary>
     
     
     
@@ -168,17 +159,14 @@
     <link href="http://example.com/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/"/>
     <id>http://example.com/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/</id>
     <published>2021-01-15T17:01:29.000Z</published>
-    <updated>2021-03-27T22:33:59.870Z</updated>
+    <updated>2021-03-27T23:36:16.949Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul><li>Debian 7 (Wheezy)版本</li><li>外网环境<br>使用<code>apt-get update</code>返回`<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Err http:&#x2F;&#x2F;archive.debian.org wheezy-updates&#x2F;main i386 Packages</span><br><span class="line">  404  Not Found [IP :]</span><br></pre></td></tr></table></figure><h1 id="问题分析与解决方法"><a href="#问题分析与解决方法" class="headerlink" title="问题分析与解决方法"></a>问题分析与解决方法</h1>零、Debian Wheezy版本原始源已经不存在了，所以需要修改源列表（Source list）。</li></ul><p>一、修改源列表，并删除原始源。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br><span class="line">    deb http:&#x2F;&#x2F;archive.debian.org&#x2F;debian wheezy main</span><br><span class="line">    deb http:&#x2F;&#x2F;archive.debian.org&#x2F;debian-security wheezy&#x2F;updates main</span><br></pre></td></tr></table></figure><p>二、修改系统时间到安全证书过期之前。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date +%Y%m%d -s &quot;20160101&quot;</span><br></pre></td></tr></table></figure><p>三、更新。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update -o Acquire::Check-Valid-Until&#x3D;false;</span><br></pre></td></tr></table></figure><p>现在就可以安装东西了。</p><p><strong>注：更改系统时间可能让系统处于危险之中，需谨慎操作。</strong></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul><li>Debian 7 (Wheezy)版本</li><li>外网环境<br>使用<code>apt-get update</code>返回`<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Err http:&#x2F;&#x2F;archive.debian.org wheezy-updates&#x2F;main i386 Packages</span><br><span class="line">  404  Not Found [IP :]</span><br></pre></td></tr></table></figure><a id="more"></a><h1 id="问题分析与解决方法"><a href="#问题分析与解决方法" class="headerlink" title="问题分析与解决方法"></a>问题分析与解决方法</h1>零、Debian Wheezy版本原始源已经不存在了，所以需要修改源列表（Source list）。</li></ul><p>一、修改源列表，并删除原始源。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br><span class="line">    deb http:&#x2F;&#x2F;archive.debian.org&#x2F;debian wheezy main</span><br><span class="line">    deb http:&#x2F;&#x2F;archive.debian.org&#x2F;debian-security wheezy&#x2F;updates main</span><br></pre></td></tr></table></figure><p>二、修改系统时间到安全证书过期之前。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date +%Y%m%d -s &quot;20160101&quot;</span><br></pre></td></tr></table></figure><p>三、更新。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update -o Acquire::Check-Valid-Until&#x3D;false;</span><br></pre></td></tr></table></figure><p>现在就可以安装东西了。</p><p><strong>注：更改系统时间可能让系统处于危险之中，需谨慎操作。</strong></p>]]></content>
     
     
-      
-      
     <summary type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Debian 7 (Wheezy)版本&lt;/li&gt;
-&lt;li&gt;外网环境&lt;br&gt;使用&lt;code&gt;apt-get update&lt;/cod</summary>
-      
+&lt;li&gt;外网环境&lt;br&gt;使用&lt;code&gt;apt-get update&lt;/code&gt;返回`&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Err http:&amp;#x2F;&amp;#x2F;archive.debian.org wheezy-updates&amp;#x2F;main i386 Packages&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  404  Not Found [IP :]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
     
     
     
@@ -196,15 +184,12 @@
     <link href="http://example.com/2021/01/13/CPU%E4%B8%AD%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%E5%92%8C%E9%97%AE%E9%A2%98/"/>
     <id>http://example.com/2021/01/13/CPU%E4%B8%AD%E5%AF%84%E5%AD%98%E5%99%A8%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92%E6%96%B9%E5%BC%8F%E5%92%8C%E9%97%AE%E9%A2%98/</id>
     <published>2021-01-13T15:33:04.000Z</published>
-    <updated>2021-01-13T15:37:26.920Z</updated>
+    <updated>2021-03-27T23:36:29.804Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="CPU的寄存器如何被用来传递参数给系统调用？"><a href="#CPU的寄存器如何被用来传递参数给系统调用？" class="headerlink" title="CPU的寄存器如何被用来传递参数给系统调用？"></a>CPU的寄存器如何被用来传递参数给系统调用？</h1><p>一开始，参数在CPU’s 寄存器里面，然后当系统调用的时候，CPU会将寄存器里面的参数复制到内核空间<code>kernel space</code>,或者说堆栈<code>stack</code>中。</p><h1 id="如果系统调用有很多参数，这可能会导致什么问题？"><a href="#如果系统调用有很多参数，这可能会导致什么问题？" class="headerlink" title="如果系统调用有很多参数，这可能会导致什么问题？"></a>如果系统调用有很多参数，这可能会导致什么问题？</h1><p>因为CPU里面只有8个通用32位寄存器：eax，ebx，ecx，edx，esi，edi，ebp，esp，除了eax和esp两个特殊的，只有剩下的6个<code>general-purpose register</code>通用寄存器可以存东西。<br>最多存32位的东西，最多存6个东西，所以多了会出错。</p><h1 id="提出一种传递参数的替代方法，以避免这个问题"><a href="#提出一种传递参数的替代方法，以避免这个问题" class="headerlink" title="提出一种传递参数的替代方法，以避免这个问题"></a>提出一种传递参数的替代方法，以避免这个问题</h1><p>6个寄存器，随便挑几个寄存器，用这些寄存器存指针，指针指向内存，内存存数据。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="CPU的寄存器如何被用来传递参数给系统调用？"><a href="#CPU的寄存器如何被用来传递参数给系统调用？" class="headerlink" title="CPU的寄存器如何被用来传递参数给系统调用？"></a>CPU的寄存器如何被用来传递参数给系统调用？</h1><p>一开始，参数在CPU’s 寄存器里面，然后当系统调用的时候，CPU会将寄存器里面的参数复制到内核空间<code>kernel space</code>,或者说堆栈<code>stack</code>中。</p><a id="more"></a><h1 id="如果系统调用有很多参数，这可能会导致什么问题？"><a href="#如果系统调用有很多参数，这可能会导致什么问题？" class="headerlink" title="如果系统调用有很多参数，这可能会导致什么问题？"></a>如果系统调用有很多参数，这可能会导致什么问题？</h1><p>因为CPU里面只有8个通用32位寄存器：eax，ebx，ecx，edx，esi，edi，ebp，esp，除了eax和esp两个特殊的，只有剩下的6个<code>general-purpose register</code>通用寄存器可以存东西。<br>最多存32位的东西，最多存6个东西，所以多了会出错。</p><h1 id="提出一种传递参数的替代方法，以避免这个问题"><a href="#提出一种传递参数的替代方法，以避免这个问题" class="headerlink" title="提出一种传递参数的替代方法，以避免这个问题"></a>提出一种传递参数的替代方法，以避免这个问题</h1><p>6个寄存器，随便挑几个寄存器，用这些寄存器存指针，指针指向内存，内存存数据。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h1 id=&quot;CPU的寄存器如何被用来传递参数给系统调用？&quot;&gt;&lt;a href=&quot;#CPU的寄存器如何被用来传递参数给系统调用？&quot; class=&quot;headerlink&quot; title=&quot;CPU的寄存器如何被用来传递参数给系统调用？&quot;&gt;&lt;/a&gt;CPU的寄存器如何被用来传递参数给系统调</summary>
-      
+    <summary type="html">&lt;h1 id=&quot;CPU的寄存器如何被用来传递参数给系统调用？&quot;&gt;&lt;a href=&quot;#CPU的寄存器如何被用来传递参数给系统调用？&quot; class=&quot;headerlink&quot; title=&quot;CPU的寄存器如何被用来传递参数给系统调用？&quot;&gt;&lt;/a&gt;CPU的寄存器如何被用来传递参数给系统调用？&lt;/h1&gt;&lt;p&gt;一开始，参数在CPU’s 寄存器里面，然后当系统调用的时候，CPU会将寄存器里面的参数复制到内核空间&lt;code&gt;kernel space&lt;/code&gt;,或者说堆栈&lt;code&gt;stack&lt;/code&gt;中。&lt;/p&gt;</summary>
     
     
     
@@ -220,16 +205,14 @@
     <link href="http://example.com/2021/01/03/CannotFindInstallationOfRealFFmpeg/"/>
     <id>http://example.com/2021/01/03/CannotFindInstallationOfRealFFmpeg/</id>
     <published>2021-01-03T22:18:04.000Z</published>
-    <updated>2021-03-27T22:39:03.934Z</updated>
+    <updated>2021-03-27T23:36:41.657Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Tensorflow视频解码错误，错误提示如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssertionError: Cannot find installation of real FFmpeg (which comes with ffprobe).</span><br></pre></td></tr></table></figure><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>安装<code>conda-forge</code>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install ffmpeg -c conda-forge</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>【1】<a href="https://github.com/MrinalJain17/Human-Activity-Recognition/issues/5">https://github.com/MrinalJain17/Human-Activity-Recognition/issues/5</a>.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Tensorflow视频解码错误，错误提示如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AssertionError: Cannot find installation of real FFmpeg (which comes with ffprobe).</span><br></pre></td></tr></table></figure><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><a id="more"></a><p>安装<code>conda-forge</code>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install ffmpeg -c conda-forge</span><br></pre></td></tr></table></figure><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>【1】<a href="https://github.com/MrinalJain17/Human-Activity-Recognition/issues/5">https://github.com/MrinalJain17/Human-Activity-Recognition/issues/5</a>.</p>]]></content>
     
     
-      
-      
     <summary type="html">&lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;Tensorflow视频解码错误，错误提示如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;t</summary>
-      
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;AssertionError: Cannot find installation of real FFmpeg (which comes with ffprobe).&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;解决办法&quot;&gt;&lt;a href=&quot;#解决办法&quot; class=&quot;headerlink&quot; title=&quot;解决办法&quot;&gt;&lt;/a&gt;解决办法&lt;/h1&gt;</summary>
     
     
     
