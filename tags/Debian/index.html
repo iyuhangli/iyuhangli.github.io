@@ -21,7 +21,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：1921/2 - 微小的工作</title>
+  <title>标签：Debian - 微小的工作</title>
   
 
   
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper  dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -386,9 +386,11 @@
       <div class='body-wrapper' id="pjax-container">
         
 
+
 <div class='l_main'>
-	
-		
+  
+    
+      
   <section class="post-list">
     
       
@@ -408,15 +410,18 @@
   
     
     <h2 class="article-title" >
-      <a href="/1921/02/06/20210206/">
-        National cycling lane 和戴口罩的老太太
+      <a href="/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/">
+        Debian 7 的 apt-get update返回404 Not Found
       </a>
     </h2>
   
   <div class='md'>
     
       
-        今天去伊钦河旁边的National cycling lane散步。在栈道中间迎面走过来一个老太太，问前面是哪里，我说我不知道但是你可以看我的谷歌地图，正当我走近一步（&lt;2m）的时候，老太太说稍等，说她需要带上口罩，因为这可以保护我们，然后我们就保持着社交距离直到她戴好口罩，然后我们就通过地图得到了前面是ST DENYS，左前是PORTSWOOD 的结论。社交距离+戴口罩这个行为太严谨了...
+        简介
+Debian 7 (Wheezy)版本
+外网环境使用apt-get update返回`12Err http:&#x2F;&#x2F;archive.debian.org wheezy-updates&#x2F;main i386 Packages  404  Not Found [IP :]
+问题分析与解决方法零、Debian Wheezy版本原始源已经不存在了，所以需要修改源列表（S...
       
     
   </div>
@@ -424,15 +429,15 @@
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time>1921-02-06</time>
+        <time>2021-01-15</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/">随便写写</a>
+          <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
         
       </div>
       
         <div>
-          <a class='readmore' href='/1921/02/06/20210206/'>
+          <a class='readmore' href='/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/'>
             阅读全文
           </a>
         </div>
@@ -452,7 +457,8 @@
   
 
 
-	
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -616,7 +622,7 @@
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 
