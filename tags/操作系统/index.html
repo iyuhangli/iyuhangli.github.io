@@ -417,7 +417,10 @@
   
   <div class='md'>
     
-      <h1 id="CPU的寄存器如何被用来传递参数给系统调用？"><a href="#CPU的寄存器如何被用来传递参数给系统调用？" class="headerlink" title="CPU的寄存器如何被用来传递参数给系统调用？"></a>CPU的寄存器如何被用来传递参数给系统调用？</h1><p>一开始，参数在CPU’s 寄存器里面，然后当系统调用的时候，CPU会将寄存器里面的参数复制到内核空间<code>kernel space</code>,或者说堆栈<code>stack</code>中。</p>
+      
+        CPU的寄存器如何被用来传递参数给系统调用？一开始，参数在CPU’s 寄存器里面，然后当系统调用的时候，CPU会将寄存器里面的参数复制到内核空间kernel space,或者说堆栈stack中。
+如果系统调用有很多参数，这可能会导致什么问题？因为CPU里面只有8个通用32位寄存器：eax，ebx，ecx，edx，esi，edi，ebp，esp，除了eax和esp两个特殊的，只有剩下的6个ge...
+      
     
   </div>
   
