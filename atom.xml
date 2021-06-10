@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-27T23:48:58.136Z</updated>
+  <updated>2021-06-09T21:58:03.183Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gradle sync failed 句柄无效 的解决方法</title>
+    <link href="http://example.com/2021/06/09/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/06/09/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2021-06-09T21:55:36.000Z</published>
+    <updated>2021-06-09T21:58:03.183Z</updated>
+    
+    <content type="html"><![CDATA[<p>从Github上克隆了自己的项目，使用Android Studio无法打开，提示如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">22:43Gradle sync started</span><br><span class="line">22:43Gradle sync failed: 句柄无效。 (438 ms)</span><br></pre></td></tr></table></figure><p>解决方法：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File-&gt;Project Sturcture 里面，把JDK的地址更换为自己的JDK（例如JDK-15）。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;从Github上克隆了自己的项目，使用Android Studio无法打开，提示如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/</summary>
+      
+    
+    
+    
+    <category term="问题记录" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Android" scheme="http://example.com/tags/Android/"/>
+    
+    <category term="Gradle" scheme="http://example.com/tags/Gradle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 10 版本 21H1 更新后指纹解锁相关问题</title>
+    <link href="http://example.com/2021/06/09/Windows10%E7%89%88%E6%9C%AC%2021H1%E6%9B%B4%E6%96%B0%E5%90%8E%E6%8C%87%E7%BA%B9%E8%A7%A3%E9%94%81%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/"/>
+    <id>http://example.com/2021/06/09/Windows10%E7%89%88%E6%9C%AC%2021H1%E6%9B%B4%E6%96%B0%E5%90%8E%E6%8C%87%E7%BA%B9%E8%A7%A3%E9%94%81%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</id>
+    <published>2021-06-09T13:03:23.000Z</published>
+    <updated>2021-06-10T11:01:23.857Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h1><p>Windows 10 版本21H1 更新之后<br>处理器 Intel(R) Core(TM) i7-8565U</p><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><ol start="0"><li>Windows 10系统版本更新之后。</li><li>在<strong>锁屏界面</strong>或<strong>设置-&gt;账户-&gt;登陆选项-&gt;Windows Hello 指纹</strong>使用指纹相关功能的时候，系统提示<blockquote><p>我们这边出现了问题，请再次尝试</p></blockquote></li></ol><p><del>当然再次尝试也不会成功 :(</del> </p><ol start="2"><li>更新指纹识别相关驱动<code>Goodix fingerprint</code>之后，发现在<strong>设置-&gt;账户-&gt;登陆选项-&gt;Windows Hello 指纹</strong>中可以新指纹。但是重启电脑或锁屏之后，锁屏界面选项<code>使用指纹解锁</code>消失。</li></ol><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h1><p>推测是Windows系统大更新后，安全相关的配置/组件发生变动。</p><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><ol start="0"><li><p>确定当前使用的驱动版本是最新版本。<strong>（非必要）</strong><br>例如联想电脑可以使用<a href="https://newsupport.lenovo.com.cn/driveDownloads_index.html">此链接</a>来查找驱动。建议通过电脑型号或电脑序列号来查找，部分情况下使用驱动管理软件可能无法发现最新版本驱动。</p></li><li><p>删除<strong>PIN</strong>并重新设置<br>点击左下角Windows 图标，单击设置图标，或者直接按 <code>Windows 徽标键 + I</code>，在设置窗口中点击<strong>账户-&gt;登陆选项</strong>，点击<code>Windows Hello PIN</code>下的按钮<code>删除</code>, 之后重新设置PIN，再在当前页面重新录入Windows Hello指纹即可。<br>如下图所示：<br><img src="https://img-blog.csdnimg.cn/20210610185629856.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210610185629856.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="PIN修改"></p><h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><p><a href="https://blog.csdn.net/iyuhangli/article/details/117789083">Windows 10 版本 21H1不推送的手动更新方法</a></p></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;问题场景：&quot;&gt;&lt;a href=&quot;#问题场景：&quot; class=&quot;headerlink&quot; title=&quot;问题场景：&quot;&gt;&lt;/a&gt;问题场景：&lt;/h1&gt;&lt;p&gt;Windows 10 版本21H1 更新之后&lt;br&gt;处理器 Intel(R) Core(TM) i7-8565U&lt;/</summary>
+      
+    
+    
+    
+    <category term="问题记录" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Windows 10" scheme="http://example.com/tags/Windows-10/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows 10 版本 21H1不推送的手动更新方法</title>
+    <link href="http://example.com/2021/06/09/Windows10%E7%89%88%E6%9C%AC21H1%E4%B8%8D%E6%8E%A8%E9%80%81%E7%9A%84%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/06/09/Windows10%E7%89%88%E6%9C%AC21H1%E4%B8%8D%E6%8E%A8%E9%80%81%E7%9A%84%E6%89%8B%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%96%B9%E6%B3%95/</id>
+    <published>2021-06-09T10:59:04.000Z</published>
+    <updated>2021-06-10T11:00:31.732Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>Windows 在2021年5月推出了21H1版本更新，但是因为推送需要时间，直接点击设置中的获取更新可能无法获取到，所以我们可以根据下面的步骤手动更新系统版本。</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol><li>下载Windows 10 更新助手—-易升<br>通过 <a href="https://www.microsoft.com/zh-cn/software-download/windows10">更新助手网站</a>或直接<a href="https://go.microsoft.com/fwlink/?LinkID=799445">点击这里</a>下载Windows 10 更新助手。</li><li>运行Windows 10 更新助手<br>更新助手下载完成后，直接运行程序，<del>按照步骤，</del> 一直点<code>下一步</code>即可。</li></ol><h1 id="更新后遇到的问题"><a href="#更新后遇到的问题" class="headerlink" title="更新后遇到的问题"></a>更新后遇到的问题</h1><p>更新后部分电脑可能会遇到以下情况：</p><ul><li>指纹解锁失灵</li><li>锁屏界面<code>指纹解锁</code>消失</li></ul><p>具体解决方法请参考文章：<br><a href="https://blog.csdn.net/iyuhangli/article/details/117789222">Windows 10 版本 21H1 更新后指纹解锁相关问题</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h1&gt;&lt;p&gt;Windows 在2021年5月推出了21H1版本更新，但是因为推送需要时间，直接点击设置中的获取更新可能无法获取到，所以我们可以根据下面的</summary>
+      
+    
+    
+    
+    <category term="问题记录" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Windows 10" scheme="http://example.com/tags/Windows-10/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows系统的Anaconda与Tensorflow(tf.contrib不能使用的问题)</title>
@@ -467,92 +542,6 @@
     <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="栈" scheme="http://example.com/tags/%E6%A0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 26. 删除排序数组中的重复项 (Java)</title>
-    <link href="http://example.com/2020/05/10/LeetCode26.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9(Java)/"/>
-    <id>http://example.com/2020/05/10/LeetCode26.%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9(Java)/</id>
-    <published>2020-05-10T18:13:39.000Z</published>
-    <updated>2020-12-19T22:25:23.623Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/</a></p><h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>给定一个排序数组，你需要在 原地 删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。<br><strong>示例 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定数组 nums &#x3D; [1,1,2], </span><br><span class="line">函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [0,0,1,1,1,2,2,3,3,4],</span><br><span class="line">函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure><p><strong>说明</strong><br>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以「引用」方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝</span><br><span class="line">int len &#x3D; removeDuplicates(nums);</span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>数组是有序的，使用<strong>双指针法</strong>。</p><h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1><ul><li>返回最终数组的长度。</li><li>不要使用额外的数组空间。<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">使用a和b两个指针，a为没有重复的数字，b为后指针。</span></span><br><span class="line"><span class="comment">当b发现重复数字时加一，继续检查，当发现不重复数字时将值赋值给a+1。</span></span><br><span class="line"><span class="comment">直到遍历完数组中所有元素。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.length==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> b=<span class="number">1</span>;b&lt;nums.length;b++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[a]!=nums[b])&#123;</span><br><span class="line">                a++;</span><br><span class="line">                nums[a]=nums[b];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;题目地址&quot;&gt;&lt;a href=&quot;#题目地址&quot; class=&quot;headerlink&quot; title=&quot;题目地址&quot;&gt;&lt;/a&gt;题目地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-fr</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="http://example.com/categories/LeetCode/"/>
-    
-    
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    <category term="指针" scheme="http://example.com/tags/%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓数独游戏-3-界面绘制之自定义视图</title>
-    <link href="http://example.com/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F3%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/"/>
-    <id>http://example.com/2020/05/10/%E5%AE%89%E5%8D%93%E6%95%B0%E7%8B%AC%E6%B8%B8%E6%88%8F3%E7%95%8C%E9%9D%A2%E7%BB%98%E5%88%B6%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%86%E5%9B%BE/</id>
-    <published>2020-05-10T17:29:20.000Z</published>
-    <updated>2020-12-31T15:27:45.295Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="创建自定义视图类"><a href="#创建自定义视图类" class="headerlink" title="创建自定义视图类"></a>创建自定义视图类</h1><p>创建自定义视图之前，需要创建自定义视图类，之后在资源文件<code>.xml</code>中作为一个元素插入。<br>创建自定义视图类时，需要继承<code>View</code>类，并重写类的构造函数。自定义视图类的基本结构如下所示：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">draw_sudoku_grid_easy</span> <span class="keyword">extends</span> <span class="title">View</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(sudoku_play_easy sudoku_play_easy)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(sudoku_play_easy);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context, AttributeSet attributeSet)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context,attributeSet);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">draw_sudoku_grid_easy</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span></span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(context,attrs,defStyleAttr);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h1 id="自定义视图类中重要函数"><a href="#自定义视图类中重要函数" class="headerlink" title="自定义视图类中重要函数"></a>自定义视图类中重要函数</h1><p>在数独游戏项目的自定义视图中，重写了View类的onDraw和onTouchEvent函数。</p><h2 id="onDraw函数"><a href="#onDraw函数" class="headerlink" title="onDraw函数"></a>onDraw函数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span></span>&#123;</span><br><span class="line"><span class="comment">//Your code</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><p>每次函数重新绘制的时候，都会运行该函数。</p><h3 id="如何刷新自定义视图界面"><a href="#如何刷新自定义视图界面" class="headerlink" title="如何刷新自定义视图界面"></a>如何刷新自定义视图界面</h3><p>可以在自定义视图类中使用<code>invalidate</code>函数来重新调用<code>onDraw</code>函数，达到刷新界面的效果。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">invalidate();</span><br></pre></td></tr></table></figure><h2 id="onTouchEvent函数"><a href="#onTouchEvent函数" class="headerlink" title="onTouchEvent函数"></a>onTouchEvent函数</h2><p>项目中使用<code>onTouchEvent</code>函数对触摸事件进行处理。<br>使用<code>MotionEvent.ACTION_DOWN</code>和<code>MotionEvent.ACTION_UP</code>判断触摸事件类型，使用<code>event.getX()</code>和<code>event.getY()</code>得到触摸位置。</p><h1 id="自定义视图中的Toast消息框"><a href="#自定义视图中的Toast消息框" class="headerlink" title="自定义视图中的Toast消息框"></a>自定义视图中的Toast消息框</h1><p>安卓数独游戏中，需要在适当的时机给出用户提示，本项目使用了<code>Toast</code>的提示方式。<br>代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Toast toast=Toast.makeText(getContext(), <span class="string">&quot;&quot;</span>, <span class="number">800</span>);</span><br><span class="line">LinearLayout layout = (LinearLayout) toast.getView();</span><br><span class="line">TextView str = (TextView) layout.getChildAt(<span class="number">0</span>);</span><br><span class="line">str.setTextSize(<span class="number">30</span>);<span class="comment">//字体大小</span></span><br><span class="line">str.setTextColor(R.color.white);<span class="comment">//字体颜色</span></span><br><span class="line">toast.setText(<span class="string">&quot;Hint added!&quot;</span>);<span class="comment">//文本内容</span></span><br><span class="line">toast.setGravity(Gravity.CENTER, <span class="number">0</span>, <span class="number">0</span>);<span class="comment">//设置居中显示</span></span><br><span class="line">ImageView imageView= <span class="keyword">new</span> ImageView(getContext());</span><br><span class="line">imageView.setImageResource(R.drawable.about_icon);<span class="comment">//要显示的图标</span></span><br><span class="line">LinearLayout toastView = (LinearLayout) toast.getView();</span><br><span class="line">toastView.setOrientation(LinearLayout.VERTICAL);</span><br><span class="line">toastView.addView(imageView, <span class="number">0</span>);</span><br><span class="line">toast.show();</span><br></pre></td></tr></table></figure><p>效果如下图：<br><img src="https://upload-images.jianshu.io/upload_images/23211257-676c0b7953421b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-676c0b7953421b51.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="Toast.png"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;创建自定义视图类&quot;&gt;&lt;a href=&quot;#创建自定义视图类&quot; class=&quot;headerlink&quot; title=&quot;创建自定义视图类&quot;&gt;&lt;/a&gt;创建自定义视图类&lt;/h1&gt;&lt;p&gt;创建自定义视图之前，需要创建自定义视图类，之后在资源文件&lt;code&gt;.xml&lt;/code&gt;中</summary>
-      
-    
-    
-    
-    <category term="安卓软件" scheme="http://example.com/categories/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/"/>
-    
-    
-    <category term="Android" scheme="http://example.com/tags/Android/"/>
-    
-    <category term="Sudoku" scheme="http://example.com/tags/Sudoku/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 236. 二叉树的最近公共祖先 (Java)</title>
-    <link href="http://example.com/2020/05/10/LeetCode236.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88(Java)/"/>
-    <id>http://example.com/2020/05/10/LeetCode236.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88(Java)/</id>
-    <published>2020-05-10T14:01:33.000Z</published>
-    <updated>2020-12-19T22:25:40.607Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a href="%5Bhttps://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/%5D(https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)"><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/</a></a></p><h3 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h3><p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。<br>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”<br>例如，给定如下二叉树:  root = [3,5,1,6,2,0,8,null,null,7,4]<br><img src="https://upload-images.jianshu.io/upload_images/23211257-80c5fb1c95617e35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-80c5fb1c95617e35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="binarytree.png"><br><strong>示例 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 1</span><br><span class="line">输出: 3</span><br><span class="line">解释: 节点 5 和节点 1 的最近公共祖先是节点 3。</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: root &#x3D; [3,5,1,6,2,0,8,null,null,7,4], p &#x3D; 5, q &#x3D; 4</span><br><span class="line">输出: 5</span><br><span class="line">解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。</span><br></pre></td></tr></table></figure><p><strong>说明:</strong></p><ul><li>所有节点的值都是唯一的。</li><li>p、q 为不同节点且均存在于给定的二叉树中。</li></ul><h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><p>LCA问题。<br>使用递归的思想，对二叉树进行后序遍历。<br>（1）当左右子树返回值均为null，说明p、q均不在子树中，返回null。<br>（2）当左右子树中有一个树返回了值，说明p、q有一个在子树中，返回该值。<br>（3）当左右子树均有返回值，说明该节点是最近的公共祖先，返回节点值。</p><h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1><ul><li>当一个节点<code>r</code>为<code>p</code>和<code>q</code>的最近公共祖先时，<code>p</code>和<code>q</code>分别在r的左右两侧。</li><li>一个节点可以是自己的祖先。</li><li>因为不是二叉搜索树（BST），所以直接用后序遍历的方法。<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>||root==p||root==q)&#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode left=lowestCommonAncestor(root.left,p,q);</span><br><span class="line">        TreeNode right=lowestCommonAncestor(root.right,p,q);</span><br><span class="line">        <span class="comment">//左树是空值，返回右节点；右数是空值，返回左节点，否则返回根节点。</span></span><br><span class="line">        <span class="keyword">return</span> left == <span class="keyword">null</span> ? right : right == <span class="keyword">null</span> ? left : root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;题目地址&quot;&gt;&lt;a href=&quot;#题目地址&quot; class=&quot;headerlink&quot; title=&quot;题目地址&quot;&gt;&lt;/a&gt;题目地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;%5Bhttps://leetcode-cn.com/problems/lowest-common-anc</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="http://example.com/categories/LeetCode/"/>
-    
-    
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-    <category term="二叉树" scheme="http://example.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
-    
-    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
