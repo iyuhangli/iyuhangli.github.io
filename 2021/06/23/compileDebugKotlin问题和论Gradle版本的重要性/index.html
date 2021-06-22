@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/12 - 微小的工作</title>
+  <title>app:compileDebugKotlin 问题的解决方法 - 微小的工作</title>
+  
+    <meta name="keywords" content="Android,Kotlin">
   
 
   
@@ -60,7 +60,7 @@
 <body>
   
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg"></div>
           
@@ -387,178 +387,218 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
-      
+    
+    
+      <h1 class="title">
+        app:compileDebugKotlin 问题的解决方法
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://github.com/iyuhangli/" rel="nofollow noopener">
+    <img no-lazy src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3816854508,122119208&fm=26&gp=0.jpg">
+    <p>Yuhang Li</p>
+  </a>
+</div>
+
           
         
           
-        
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
+    </a>
+  </div>
+
+
           
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/31/%E9%85%8D%E7%BD%AEGitalk%E6%97%B6%E6%8F%90%E7%A4%BA%E8%AE%A4%E8%AF%81%E9%94%99%E8%AF%AF%E4%B8%8E%E6%B2%A1%E6%9C%89issue/">
-        关于配置Gitalk时提示没有issue和Error Validation Failed的问题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        配置Gitalk踩到的坑提示没有issue解决方法：直接登录owner的Github账号。如果登陆后跳转到主页，说这个_post的md文件标题中含有中文符号和空格，删除即可。
-提示Error: Validation Failed解决方法：_post的md文件标题过长，缩短标题即可。
-Note：与标题有关的错误直接修改文件标题即可，文本内容不受限制。
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年6月23日</p>
+  </a>
+</div>
 
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
       
-    
+      <div id="lc-pv" data-title="app:compileDebugKotlin 问题的解决方法" data-path="/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>从谷歌codelabs上克隆的软件，在Android Studio中构建的时候提示：</p>
+<blockquote>
+<p>A problem was found with the configuration of task ‘:app:compileDebugKotlin’ (type ‘KotlinCompile’).</p>
+<ul>
+<li>In plugin ‘kotlin-android’ type ‘org.jetbrains.kotlin.gradle.tasks.KotlinCompile’ property ‘classpathFqNamesHistoryDir$kotlin_gradle_plugin’ annotated with @Internal should not be also annotated with @Optional.</li>
+</ul>
+</blockquote>
+<p><strong>原因</strong><br>猜测是版本的问题。😥</p>
+<p><strong>解决方法</strong><br>直接把Gradle版本改成6.7.1就行了。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/12/31/%E9%85%8D%E7%BD%AEGitalk%E6%97%B6%E6%8F%90%E7%A4%BA%E8%AE%A4%E8%AF%81%E9%94%99%E8%AF%AF%E4%B8%8E%E6%B2%A1%E6%9C%89issue/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-禁止演绎 4.0 国际 (CC BY-NC-ND 4.0) 协议</p>
+
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-22T23:33:07+01:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年6月22日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/29/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/">
-        关于Windows运行YOLO和SSD的python代码提示No module named cv2和On entry to DGEBAL parameter number的问题
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Android/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Android</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kotlin/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Kotlin</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Python运行YOLO和SSD相关文件时报错提示ModuleNotFoundError: No module named &#39;cv2&#39;解决方法：安装opencv-python。
-1pip install opencv-python
-提示 **On entry错误1234567 ** On entry to DGEBAL parameter number  3 had an i...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/&title=app:compileDebugKotlin 问题的解决方法 - 微小的工作&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/&title=app:compileDebugKotlin 问题的解决方法 - 微小的工作&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/&title=app:compileDebugKotlin 问题的解决方法 - 微小的工作&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/">问题记录</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/12/29/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/12/22/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/">
-        字符串中的第一个唯一字符 (Java)
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        题目地址https://leetcode-cn.com/problems/first-unique-character-in-a-string/
-题目要求给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
-示例 1:
-12s &#x3D; &quot;leetcode&quot;返回 0
-示例 2:
-12s &#x3D; &quot;loveleetcod...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-12-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/LeetCode/">LeetCode</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2020/12/22/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/06/23/DataBinding%E8%A2%AB%E6%9B%BF%E6%8D%A2/'>
+          <p class='title'>DSL element 'android.dataBinding.enabled' is obsolete 解决方法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>DSL element ‘android.dataBinding.enabled’ is obsolete 解决方法从谷歌codelabs上克隆的软件，在Android Studio中构建的时候...</p>
+        </a>
       
     </div>
   
+</article>
 
-</div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
   
 
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="gitalk-container"></div>
 
-	
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -566,146 +606,14 @@ Note：与标题有关的错误直接修改文件标题即可，文本内容不�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1608670115&di=c4e6c6a83091ec5c91061e2b766f790a&src=http://c-ssl.duitang.com/uploads/item/202001/24/20200124152835_hiLnr.thumb.400_0.jpeg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">微小的工作</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:iyuhangli@outlook.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/iyuhangli/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/LeetCode/" href="/categories/LeetCode/"
-            id="categoriesLeetCode"
-            ><div class='name'>LeetCode</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
-            id="categoriesE5ADA6E4B9A0E7AC94E8AEB0"
-            ><div class='name'>学习笔记</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/" href="/categories/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/"
-            id="categoriesE5AE89E58D93E8BDAFE4BBB6"
-            ><div class='name'>安卓软件</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" href="/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"
-            id="categoriesE997AEE9A298E8AEB0E5BD95"
-            ><div class='name'>问题记录</div><div class='badge'>(13)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/" href="/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E5%86%99/"
-            id="categoriesE99A8FE4BEBFE58699E58699"
-            ><div class='name'>随便写写</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Android/" style="font-size: 24px; color: #555">Android</a> <a href="/tags/CSP/" style="font-size: 14px; color: #999">CSP</a> <a href="/tags/Conda/" style="font-size: 14px; color: #999">Conda</a> <a href="/tags/Contrib/" style="font-size: 14px; color: #999">Contrib</a> <a href="/tags/Debian/" style="font-size: 14px; color: #999">Debian</a> <a href="/tags/Gitalk/" style="font-size: 14px; color: #999">Gitalk</a> <a href="/tags/Gradle/" style="font-size: 14px; color: #999">Gradle</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Java/" style="font-size: 22px; color: #636363">Java</a> <a href="/tags/Kotlin/" style="font-size: 18px; color: #7e7e7e">Kotlin</a> <a href="/tags/LeetCode/" style="font-size: 22px; color: #636363">LeetCode</a> <a href="/tags/Matlab/" style="font-size: 16px; color: #8b8b8b">Matlab</a> <a href="/tags/Python/" style="font-size: 16px; color: #8b8b8b">Python</a> <a href="/tags/SSD/" style="font-size: 14px; color: #999">SSD</a> <a href="/tags/Sudoku/" style="font-size: 20px; color: #707070">Sudoku</a> <a href="/tags/Tensorflow/" style="font-size: 14px; color: #999">Tensorflow</a> <a href="/tags/Wheezy/" style="font-size: 14px; color: #999">Wheezy</a> <a href="/tags/Windows-10/" style="font-size: 16px; color: #8b8b8b">Windows 10</a> <a href="/tags/YOLO/" style="font-size: 14px; color: #999">YOLO</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%B3%95/" style="font-size: 16px; color: #8b8b8b">二分法</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 16px; color: #8b8b8b">二叉树</a> <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" style="font-size: 16px; color: #8b8b8b">人工智能</a> <a href="/tags/%E5%82%85%E9%87%8C%E5%8F%B6/" style="font-size: 14px; color: #999">傅里叶</a> <a href="/tags/%E5%8D%97%E5%AE%89/" style="font-size: 14px; color: #999">南安</a> <a href="/tags/%E5%AF%B9%E8%B1%A1%E6%A3%80%E6%B5%8B/" style="font-size: 14px; color: #999">对象检测</a> <a href="/tags/%E5%AF%B9%E8%B1%A1%E8%AF%86%E5%88%AB/" style="font-size: 14px; color: #999">对象识别</a> <a href="/tags/%E6%8C%87%E9%92%88/" style="font-size: 14px; color: #999">指针</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 20px; color: #707070">数据结构</a> <a href="/tags/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/" style="font-size: 14px; color: #999">文献综述</a> <a href="/tags/%E6%A0%88/" style="font-size: 14px; color: #999">栈</a> <a href="/tags/%E6%BB%A4%E6%B3%A2/" style="font-size: 14px; color: #999">滤波</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 14px; color: #999">英语</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 14px; color: #999">链表</a> <a href="/tags/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/" style="font-size: 14px; color: #999">问题记录</a> <a href="/tags/%E9%98%9F%E5%88%97/" style="font-size: 14px; color: #999">队列</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -715,14 +623,14 @@ Note：与标题有关的错误直接修改文件标题即可，文本内容不�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="app:compileDebugKotlin 问题的解决方法";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
 </script>
 

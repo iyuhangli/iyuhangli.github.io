@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-22T22:03:29.294Z</updated>
+  <updated>2021-06-22T22:33:07.781Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>app:compileDebugKotlin 问题的解决方法</title>
+    <link href="http://example.com/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
+    <id>http://example.com/2021/06/23/compileDebugKotlin%E9%97%AE%E9%A2%98%E5%92%8C%E8%AE%BAGradle%E7%89%88%E6%9C%AC%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</id>
+    <published>2021-06-23T01:13:12.000Z</published>
+    <updated>2021-06-22T22:33:07.781Z</updated>
+    
+    <content type="html"><![CDATA[<p>从谷歌codelabs上克隆的软件，在Android Studio中构建的时候提示：</p><blockquote><p>A problem was found with the configuration of task ‘:app:compileDebugKotlin’ (type ‘KotlinCompile’).</p><ul><li>In plugin ‘kotlin-android’ type ‘org.jetbrains.kotlin.gradle.tasks.KotlinCompile’ property ‘classpathFqNamesHistoryDir$kotlin_gradle_plugin’ annotated with @Internal should not be also annotated with @Optional.</li></ul></blockquote><p><strong>原因</strong><br>猜测是版本的问题。😥</p><p><strong>解决方法</strong><br>直接把Gradle版本改成6.7.1就行了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;从谷歌codelabs上克隆的软件，在Android Studio中构建的时候提示：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A problem was found with the configuration of task ‘:app:compileDebugKotli</summary>
+      
+    
+    
+    
+    <category term="问题记录" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Android" scheme="http://example.com/tags/Android/"/>
+    
+    <category term="Kotlin" scheme="http://example.com/tags/Kotlin/"/>
+    
+  </entry>
   
   <entry>
     <title>DSL element &#39;android.dataBinding.enabled&#39; is obsolete 解决方法</title>
@@ -502,36 +530,6 @@
     <category term="人工智能" scheme="http://example.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
     <category term="CSP" scheme="http://example.com/tags/CSP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 287. 寻找重复数 (Java)（快慢指针法和二分法）</title>
-    <link href="http://example.com/2020/05/26/LeetCode287.%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0(Java)(%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95)/"/>
-    <id>http://example.com/2020/05/26/LeetCode287.%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0(Java)(%E5%BF%AB%E6%85%A2%E6%8C%87%E9%92%88%E6%B3%95%E5%92%8C%E4%BA%8C%E5%88%86%E6%B3%95)/</id>
-    <published>2020-05-26T14:30:05.000Z</published>
-    <updated>2020-12-19T22:25:44.977Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题目地址"><a href="#题目地址" class="headerlink" title="题目地址"></a>题目地址</h1><p><a href="https://leetcode-cn.com/problems/find-the-duplicate-number/">https://leetcode-cn.com/problems/find-the-duplicate-number/</a></p><h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>给定一个包含 n + 1 个整数的数组 nums，其数字都在 1 到 n 之间（包括 1 和 n），可知至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。<br><strong>示例 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,4,2,2]</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure><p><strong>示例 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [3,1,3,4,2]</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure><p><strong>说明：</strong></p><ul><li>不能更改原数组（假设数组是只读的）。</li><li>只能使用额外的 O(1) 的空间。</li><li>时间复杂度小于 O(n2) 。</li><li>数组中只有一个重复的数字，但它可能不止重复出现一次。<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1>因为数组中只有一个数字有重复项，可以把数组当成一个有环的链表，然后找到环的起点，这就和<a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">LeetCode 142. 环形链表 II</a>一样了。使用<strong>快慢指针法</strong>。</li></ul><p>当然也可以使用<strong>二分法</strong>。</p><h1 id="需要注意的"><a href="#需要注意的" class="headerlink" title="需要注意的"></a>需要注意的</h1><ul><li>常数空间</li><li>平方的复杂度<h1 id="解法一：快慢指针法"><a href="#解法一：快慢指针法" class="headerlink" title="解法一：快慢指针法"></a>解法一：快慢指针法</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> fast = <span class="number">0</span>, slow = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">            fast = nums[nums[fast]];</span><br><span class="line">            slow = nums[slow];</span><br><span class="line">            <span class="keyword">if</span>(slow == fast) &#123;</span><br><span class="line">                fast = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>(nums[slow] != nums[fast]) &#123;</span><br><span class="line">                    fast = nums[fast];</span><br><span class="line">                    slow = nums[slow];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> nums[slow];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="快慢指针法思路"><a href="#快慢指针法思路" class="headerlink" title="快慢指针法思路"></a>快慢指针法思路</h2>假如有一个数组<code>[1,2,4,2]</code>，这时候就可以如果按照顺序遍历，就是<code>1242 42  42······</code>。<br>我们设置两个一快(fast)一慢(slow)两个指针，一个每次走两步，一个每次走一步，直到它们相遇。<br>此时再将 slow 放置到起点，两个指针每次同时移动一步，相遇的点就是答案。<br><img src="https://upload-images.jianshu.io/upload_images/23211257-636fcb670e50a0cb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" class="lazyload" data-srcset="https://upload-images.jianshu.io/upload_images/23211257-636fcb670e50a0cb?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" srcset="data:image/png;base64,666" alt="示意图"></li></ul><h1 id="解法二：二分法"><a href="#解法二：二分法" class="headerlink" title="解法二：二分法"></a>解法二：二分法</h1><h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findDuplicate</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> right = len - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (left + right) &gt;&gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">                <span class="keyword">if</span> (num &lt;= mid) &#123;</span><br><span class="line">                    cnt += <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (cnt &gt; mid) &#123;</span><br><span class="line">                right = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="二分法思路"><a href="#二分法思路" class="headerlink" title="二分法思路"></a>二分法思路</h2><p>拿示例一举个例子：</p><p>[1,3,4,2,2]<br>此时数字在 1 到5 之间。</p><p>mid = (1 + 5) / 2 = 3<br>小于等于的3有4个，即(1,2,2,3)，1到3中肯定有重复的值。</p><p>mid = (1 + 3) / 2 = 2<br>小于等于的2有3个(1,2,2)，1到2中肯定有重复的值。</p><p>mid = (1 + 2) / 2 = 1<br>小于等于的1有1个(1)，2到2中肯定有重复的值<br>所以重复的数是 2。</p><p>另外这是一个反常规操作，用<code>时间换空间</code>，因为i我们一般都是用<code>空间换时间</code>。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;题目地址&quot;&gt;&lt;a href=&quot;#题目地址&quot; class=&quot;headerlink&quot; title=&quot;题目地址&quot;&gt;&lt;/a&gt;题目地址&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/find-the-duplicate-n</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="http://example.com/categories/LeetCode/"/>
-    
-    
-    <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
-    
-    <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-    <category term="二分法" scheme="http://example.com/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
-    
-    <category term="链表" scheme="http://example.com/tags/%E9%93%BE%E8%A1%A8/"/>
     
   </entry>
   
