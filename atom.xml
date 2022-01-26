@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-22T22:33:07.781Z</updated>
+  <updated>2022-01-26T11:59:56.241Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序footer遮挡页面内容的解决方法</title>
+    <link href="http://example.com/2021/12/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Ffooter%E9%81%AE%E6%8C%A1%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/12/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8Ffooter%E9%81%AE%E6%8C%A1%E9%A1%B5%E9%9D%A2%E5%86%85%E5%AE%B9%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2021-12-01T11:52:52.000Z</published>
+    <updated>2022-01-26T11:59:56.241Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题场景："><a href="#问题场景：" class="headerlink" title="问题场景："></a>问题场景：</h1><p>开发微信小程序时，使用到了底部footer作为导航栏。</p><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>底部的footer导航栏会遮挡住正文的内容，即将页面下拉到底端时，仍然有一些内容无法显示。</p><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="原因分析："><a href="#原因分析：" class="headerlink" title="原因分析："></a>原因分析：</h1><p>页面的内容被footer遮挡了。<br>Footer是利用<code>position:fixed</code>来实现的。但是，使用<code>position:fixed</code>会使自定义的footer挡住页面最下端的内容。</p><hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1"><h1 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h1><p>在<code>&lt;footer&gt;</code>块之外再包裹一层<code>div</code>，然后再增加一个与<code>&lt;footer&gt;</code>同级的<code>&lt;div&gt;</code>块，当<code>&lt;div&gt;</code>块的高度和<code>&lt;footer&gt;</code>一样的时候，主页面就会有一个和<code>&lt;footer&gt;</code>一样大小的pad，问题就解决了</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;height:60px;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&#x27;footer&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&#x27;reply-topic&#x27;</span>&gt;</span>Footer名<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h2><p>直接在被挡着内容的上一级的<code>div</code>里面加上<code>padding-bottom: 15%</code>。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;问题场景：&quot;&gt;&lt;a href=&quot;#问题场景：&quot; class=&quot;headerlink&quot; title=&quot;问题场景：&quot;&gt;&lt;/a&gt;问题场景：&lt;/h1&gt;&lt;p&gt;开发微信小程序时，使用到了底部footer作为导航栏。&lt;/p&gt;
+&lt;hr style=&quot; border:solid; </summary>
+      
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="微信小程序" scheme="http://example.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="XML" scheme="http://example.com/tags/XML/"/>
+    
+  </entry>
   
   <entry>
     <title>app:compileDebugKotlin 问题的解决方法</title>
@@ -72,8 +99,8 @@
   
   <entry>
     <title>jcenter() is deprecated 解决方法</title>
-    <link href="http://example.com/2021/06/22/Jcenter%E8%A2%AB%E5%81%9C%E7%94%A8/"/>
-    <id>http://example.com/2021/06/22/Jcenter%E8%A2%AB%E5%81%9C%E7%94%A8/</id>
+    <link href="http://example.com/2021/06/23/Jcenter%E8%A2%AB%E5%81%9C%E7%94%A8/"/>
+    <id>http://example.com/2021/06/23/Jcenter%E8%A2%AB%E5%81%9C%E7%94%A8/</id>
     <published>2021-06-22T21:56:43.000Z</published>
     <updated>2021-06-22T22:01:35.758Z</updated>
     
@@ -98,8 +125,8 @@
   
   <entry>
     <title>Gradle sync failed 句柄无效 的解决方法</title>
-    <link href="http://example.com/2021/06/09/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://example.com/2021/06/09/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <link href="http://example.com/2021/06/10/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2021/06/10/Gradlesyncfailed%E5%8F%A5%E6%9F%84%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
     <published>2021-06-09T21:55:36.000Z</published>
     <updated>2021-06-09T21:58:03.183Z</updated>
     
@@ -173,8 +200,8 @@
   
   <entry>
     <title>Windows系统的Anaconda与Tensorflow(tf.contrib不能使用的问题)</title>
-    <link href="http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/"/>
-    <id>http://example.com/2021/03/23/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/</id>
+    <link href="http://example.com/2021/03/24/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/"/>
+    <id>http://example.com/2021/03/24/Windows%E7%B3%BB%E7%BB%9F%E7%9A%84Anaconda%E4%B8%8ETensorflow/</id>
     <published>2021-03-23T19:22:53.000Z</published>
     <updated>2021-03-27T23:48:58.136Z</updated>
     
@@ -245,8 +272,8 @@
   
   <entry>
     <title>13种对象识别算法文献综述</title>
-    <link href="http://example.com/2021/02/27/%E5%AF%B9%E8%B1%A1%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/"/>
-    <id>http://example.com/2021/02/27/%E5%AF%B9%E8%B1%A1%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/</id>
+    <link href="http://example.com/2021/02/28/%E5%AF%B9%E8%B1%A1%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/"/>
+    <id>http://example.com/2021/02/28/%E5%AF%B9%E8%B1%A1%E8%AF%86%E5%88%AB%E7%AE%97%E6%B3%95%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0/</id>
     <published>2021-02-27T22:53:00.000Z</published>
     <updated>2021-03-27T22:54:54.787Z</updated>
     
@@ -271,8 +298,8 @@
   
   <entry>
     <title>National cycling lane</title>
-    <link href="http://example.com/2021/02/06/20210206/"/>
-    <id>http://example.com/2021/02/06/20210206/</id>
+    <link href="http://example.com/2021/02/07/20210206/"/>
+    <id>http://example.com/2021/02/07/20210206/</id>
     <published>2021-02-06T21:30:04.000Z</published>
     <updated>2021-03-27T23:39:34.837Z</updated>
     
@@ -295,8 +322,8 @@
   
   <entry>
     <title>证明八数码问题游戏的状态可以划分为两个不相交的集合，每个集合中的状态经过任意多步行动都不能转化成另一个集合中的状态</title>
-    <link href="http://example.com/2021/01/21/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/"/>
-    <id>http://example.com/2021/01/21/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/</id>
+    <link href="http://example.com/2021/01/22/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/"/>
+    <id>http://example.com/2021/01/22/%E8%AF%81%E6%98%8E%E5%85%AB%E6%95%B0%E7%A0%81%E9%97%AE%E9%A2%98%E6%B8%B8%E6%88%8F%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%AF%E4%BB%A5%E5%88%92%E5%88%86%E4%B8%BA%E4%B8%A4%E4%B8%AA%E4%B8%8D%E7%9B%B8%E4%BA%A4%E7%9A%84%E9%9B%86%E5%90%88/</id>
     <published>2021-01-21T16:12:04.000Z</published>
     <updated>2021-03-27T23:39:27.483Z</updated>
     
@@ -319,8 +346,8 @@
   
   <entry>
     <title>Debian 7 的 apt-get update返回404 Not Found</title>
-    <link href="http://example.com/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/"/>
-    <id>http://example.com/2021/01/15/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/</id>
+    <link href="http://example.com/2021/01/16/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/"/>
+    <id>http://example.com/2021/01/16/apt-getupdate%E8%BF%94%E5%9B%9E404NotFound/</id>
     <published>2021-01-15T17:01:29.000Z</published>
     <updated>2021-03-27T23:39:21.691Z</updated>
     
@@ -371,8 +398,8 @@
   
   <entry>
     <title>AssertionError Cannot find installation of real FFmpeg (which comes with ffprobe)</title>
-    <link href="http://example.com/2021/01/03/CannotFindInstallationOfRealFFmpeg/"/>
-    <id>http://example.com/2021/01/03/CannotFindInstallationOfRealFFmpeg/</id>
+    <link href="http://example.com/2021/01/04/CannotFindInstallationOfRealFFmpeg/"/>
+    <id>http://example.com/2021/01/04/CannotFindInstallationOfRealFFmpeg/</id>
     <published>2021-01-03T22:18:04.000Z</published>
     <updated>2021-03-27T23:39:09.490Z</updated>
     
@@ -450,8 +477,8 @@
   
   <entry>
     <title>关于Windows运行YOLO和SSD的python代码提示No module named cv2和On entry to DGEBAL parameter number的问题</title>
-    <link href="http://example.com/2020/12/29/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/"/>
-    <id>http://example.com/2020/12/29/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/</id>
+    <link href="http://example.com/2020/12/30/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/"/>
+    <id>http://example.com/2020/12/30/%E6%B2%A1%E6%9C%89%E6%A8%A1%E5%9D%97%E5%8F%ABCV2/</id>
     <published>2020-12-29T20:29:33.000Z</published>
     <updated>2020-12-31T15:28:05.627Z</updated>
     
@@ -480,8 +507,8 @@
   
   <entry>
     <title>字符串中的第一个唯一字符 (Java)</title>
-    <link href="http://example.com/2020/12/22/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/"/>
-    <id>http://example.com/2020/12/22/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/</id>
+    <link href="http://example.com/2020/12/23/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/"/>
+    <id>http://example.com/2020/12/23/LeetCode387.%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%94%AF%E4%B8%80%E5%AD%97%E7%AC%A6(Java)/</id>
     <published>2020-12-22T20:10:05.000Z</published>
     <updated>2020-12-22T20:11:03.160Z</updated>
     
@@ -501,35 +528,6 @@
     <category term="LeetCode" scheme="http://example.com/tags/LeetCode/"/>
     
     <category term="Java" scheme="http://example.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>约束满足问题的三个启发式（Constraint Satisfaction Problem）不能转化成另一个集合中的状态</title>
-    <link href="http://example.com/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/"/>
-    <id>http://example.com/2020/11/10/%E7%BA%A6%E6%9D%9F%E6%BB%A1%E8%B6%B3%E9%97%AE%E9%A2%98%E7%9A%84%E4%B8%89%E4%B8%AA%E5%90%AF%E5%8F%91%E5%BC%8F/</id>
-    <published>2020-11-10T14:12:04.000Z</published>
-    <updated>2021-03-27T14:32:56.207Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>常见的三个启发式：</p><ol><li>最小剩余值（此变量仍然有多少个有效值）</li><li>度启发式（此变量影响多少其他变量）</li><li>最小约束值（什么值将为其他变量留下最多其他值）</li></ol><h1 id="以澳大利亚地图为例"><a href="#以澳大利亚地图为例" class="headerlink" title="以澳大利亚地图为例"></a>以澳大利亚地图为例</h1><p><img src="https://img-blog.csdnimg.cn/20210327222729947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" class="lazyload" data-srcset="https://img-blog.csdnimg.cn/20210327222729947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2l5dWhhbmdsaQ==,size_16,color_FFFFFF,t_70#pic_center" srcset="data:image/png;base64,666" alt="CSP"></p><p><strong>题目要求：</strong> 对澳大利亚地图的每个州进行着色，每个区域可以涂上红色、绿色或者蓝色，要求是相邻的区域颜色不能相同。（不需要考虑<code>T</code>，因为<code>T</code>可以涂任意颜色）</p><p><strong>分析：</strong><br>-&gt;根据启发式1，<code>NT</code>和<code>NSW</code>的剩余有效值数量都相同。<br>-&gt;根据启发式2，<code>NSW</code>影响1个变量，但是<code>NT</code>影响0个，所以下一步应该给<code>NSW</code>涂色。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;常见的三个启发式：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;最小剩余值（此变量仍然有多少个有效值）&lt;/li&gt;
-&lt;li&gt;度启发式（此变量影响多少其他变量）&lt;</summary>
-      
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="人工智能" scheme="http://example.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    <category term="CSP" scheme="http://example.com/tags/CSP/"/>
     
   </entry>
   
